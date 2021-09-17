@@ -10,8 +10,13 @@ import SearchLocation from './subcomponents/SearchLocation';
 import Results from './components/Results';
 import InfiniteScroll from "react-infinite-scroll-component"
 import EventDetails from './components/EventDetails';
+import Event from './models/Event';
+import {useState} from "react";
+import { stringify } from 'querystring';
 
 function App() {
+
+  const[event, setEvent] = useState<Event>({name:"", url:""})
   
   return (
     <div className="App">
@@ -20,6 +25,10 @@ function App() {
      <Header />
       
       <Switch>
+        {/* Route to Event Details */}
+        <Route path="/details/:id" exact>
+          <EventDetails />
+        </Route>
         {/* Route to Favorites page */}
         <Route path="/favorites" exact>
           <Favorites />
@@ -27,11 +36,7 @@ function App() {
         {/* Route to Results */}
         <Route path="/results" exact>
           <Results />
-        </Route>
-        {/* Route to Event Details */}
-        <Route path="/details" exact>
-          <EventDetails />
-        </Route>
+        </Route> 
         {/* Route to SearchCriteria */}
         <Route path="/search" exact>
           <SearchCriteria />

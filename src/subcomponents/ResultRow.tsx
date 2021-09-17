@@ -9,7 +9,7 @@ export default function ResultRow({ name, url, dates, classifications }: Event) 
     const history = useHistory();
 
     function handleClick() {
-        history.push("/details")
+        history.push("/details/:id")
     }
   
     return (
@@ -23,7 +23,7 @@ export default function ResultRow({ name, url, dates, classifications }: Event) 
         <Card.Title onClick={handleClick} className="cardTitle">{name}</Card.Title>
         <Card.Text>
           
-         {dates.start.localDate} 
+         {dates?.start.localDate} 
         
          
         

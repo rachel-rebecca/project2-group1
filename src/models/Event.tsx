@@ -16,9 +16,10 @@ interface Genre {
 
 
 export default interface Event {
-    name: string;
-    url: string;
-    dates: Dates;
+    name?: string | undefined;
+    id?: string | undefined;
+    url?: string | undefined;
+    dates?: Dates | undefined;
     classifications?: Genre;
 }
 

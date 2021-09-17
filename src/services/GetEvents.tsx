@@ -26,10 +26,11 @@ export default function getEvents (): Promise<Event[]> {
     .then(response => response.data._embedded.events)
 }
 
-export function getEvent (id: any): Promise<Event> {
+export function getEvent (id: any): Promise<any> {
 
-    return http.get(`/events.json/${id}`)
-    
+    return http.get(`/events.json/?id=${id}`)
+    .then(response => response.data._embedded.events)
+
 }
 
 
