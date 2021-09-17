@@ -2,23 +2,38 @@ import {useParams, NavLink, Redirect, BrowserRouter as Router, Switch, Route} fr
 import { useHistory } from "react-router";
 
 export default function Header() {
+    const history = useHistory();
+
+    function clickHome () {
+        history.push("/")
+    }
+
+    function clickSearch () {
+        history.push("/search")
+    }
+
+    function clickFavorites () {
+        history.push("/favorites")
+    }
+
+
   return (
     
     <header>
 
     <Router>
         <nav>
-     <NavLink to="/" exact> <h1 className="headerH1">merrygo</h1> </NavLink>
+     <NavLink to="/" exact> <h1 className="headerH1" onClick={clickHome}>merrygo</h1> </NavLink>
 
       <ul className="headerUl">
-        <li className="headerLi">
+        <li className="headerLi" onClick={clickFavorites}>
           <NavLink to="/favorites">
             <i className="fas fa-star"></i>
             favorites
           </NavLink>
         </li>
 
-        <li className="headerLi">
+        <li className="headerLi" onClick={clickSearch}>
           <NavLink to="/search">
             <i className="fas fa-search"></i>
             search
