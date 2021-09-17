@@ -6,12 +6,12 @@ export interface Dates {
     start: Start
 }
 
-interface Genre {
-    id: string;
+export interface ID {
+    id: string | undefined;
 }
 
-interface Classifications {
-    genre: Genre;
+interface Genre {
+    genre: ID;
 }
 
 
@@ -19,6 +19,7 @@ export default interface Event {
     name: string;
     url: string;
     dates: Dates;
-    // classifications: Classifications;
+    classifications: Genre;
 }
+
 

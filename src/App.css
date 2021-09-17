@@ -1,1 +1,73 @@
 
+.container {
+  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  background: lavender;
+  width: 100%;
+  height: 6rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.headerH1 {
+  margin: 5px;
+}
+
+.headerUl {
+  list-style: none;
+  margin: 5px;
+}
+
+.headerLi:hover {
+  color: gold;  
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  
+
+}
+
+.starDiv {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.fa-star:hover, .fa-search:hover {
+  color: gold;
+  align-self: flex-end; 
+}
+
+.fa-star, .fa-search {
+  margin-right: 5px;
+}
+
+.homeH1 {
+  margin-top: 100px;
+  
+}
+
+.resultsDiv {
+  margin-top: 70%;
+  height: 100vh;
+  
+}

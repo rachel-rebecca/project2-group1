@@ -2,6 +2,7 @@ import ResultRow from "../subcomponents/ResultRow";
 import {useState, useEffect} from "react"; 
 import getEvents from "../services/GetEvents";
 import Event from "../models/Event";
+import Header from "./Header";
 
 export default function Results () {
     const[events, setEvents] = useState<Event[]>();
@@ -16,11 +17,10 @@ export default function Results () {
     // }
 
     return (
-        <div> 
-            <h1> Results </h1>
+        <div className="resultsDiv"> 
            
             {events?.map((event, index) => {
-                return <ResultRow key={index} name={event.name} url={event.url} dates={event.dates} />
+                return <ResultRow key={index} name={event.name} url={event.url} dates={event.dates} classifications={event.classifications}/>
             })}
            
            {/* Will load next 20 results when clicked */}
