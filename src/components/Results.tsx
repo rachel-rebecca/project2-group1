@@ -1,7 +1,6 @@
 import ResultRow from "../subcomponents/ResultRow";
 import {useState, useEffect} from "react"; 
 import getEvents from "../services/GetEvents";
-import SearchLocation from "../subcomponents/SearchLocation";
 import Event from "../models/Event";
 
 export default function Results () {
@@ -11,10 +10,10 @@ export default function Results () {
         getEvents().then((events) => {setEvents(events)})
     }, [])
 
-    function LoadMore (events: Event[]) {
-        let moreEvents = [...events];
-        // find some way to copy original array and push next 20 results to it
-    }
+    // function LoadMore (events: Event[]) {
+    //     let moreEvents = [...events];
+    //     // find some way to copy original array and push next 20 results to it
+    // }
 
     return (
         <div> 
