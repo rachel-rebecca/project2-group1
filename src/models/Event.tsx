@@ -19,7 +19,7 @@ export default interface Event {
     name: string;
     url: string;
     dates: Dates;
-    classifications: Genre;
+    classifications?: Genre;
 }
 
 

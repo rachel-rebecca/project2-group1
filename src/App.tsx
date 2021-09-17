@@ -8,15 +8,16 @@ import Favorites from './components/Favorites';
 import SearchCriteria from './subcomponents/SearchCriteria';
 import SearchLocation from './subcomponents/SearchLocation';
 import Results from './components/Results';
+import InfiniteScroll from "react-infinite-scroll-component"
+import EventDetails from './components/EventDetails';
 
 function App() {
   
   return (
     <div className="App">
      <Router> 
-      
+      {/* contains our NavLinks */}
      <Header />
-      
       
       <Switch>
         {/* Route to Favorites page */}
@@ -26,6 +27,10 @@ function App() {
         {/* Route to Results */}
         <Route path="/results" exact>
           <Results />
+        </Route>
+        {/* Route to Event Details */}
+        <Route path="/details" exact>
+          <EventDetails />
         </Route>
         {/* Route to SearchCriteria */}
         <Route path="/search" exact>

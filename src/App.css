@@ -41,8 +41,10 @@ nav {
 .card {
   display: flex;
   flex-direction: column;
-  
+}
 
+.cardTitle:hover {
+  color: lavender;
 }
 
 .starDiv {
