@@ -20,7 +20,7 @@ export default function Results () {
             <h1> Results </h1>
            
             {events?.map((event, index) => {
-                return <ResultRow key={index} name={event.name} url={event.url} dates={event.dates}/>
+                return <ResultRow key={index} name={event.name} url={event.url} dates={event.dates} />
             })}
            
            {/* Will load next 20 results when clicked */}

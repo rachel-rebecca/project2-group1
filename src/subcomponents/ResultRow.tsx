@@ -15,6 +15,8 @@ export default function ResultRow({ name, url, dates }: Event) {
         <Card.Text>
           
          {dates.start.localDate} 
+
+         {/* {classifications.genre.id} */}
         </Card.Text>
         <Button variant="primary" href={url}>
           Buy Tickets
