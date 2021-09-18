@@ -2,14 +2,21 @@ import Event from "../models/Event";
 import Results from "../components/Results";
 import { Card, Button } from "react-bootstrap";
 import {Dates} from "../models/Event";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { useHistory } from "react-router";
+import {getEvent} from "../services/GetEvents";
 
-export default function ResultRow({ name, url, dates, classifications }: Event) {
+export default function ResultRow({ id, name, url, dates, classifications, _embedded }: Event) {
     const history = useHistory();
+    const[Id, setId] = useState<string>();
+    const[event, setEvent] = useState<Event>()
+
 
     function handleClick() {
-        history.push("/details/:id")
+        const Id = id
+        setId(Id)
+        setEvent({name: name, url: url})
+        history.push(`/details/${id}${name}`)
     }
   
     return (
@@ -22,7 +29,7 @@ export default function ResultRow({ name, url, dates, classifications }: Event) 
       <Card.Body>
         <Card.Title onClick={handleClick} className="cardTitle">{name}</Card.Title>
         <Card.Text>
-          
+          {_embedded?.venues.postalCode}
          {dates?.start.localDate} 
         
          

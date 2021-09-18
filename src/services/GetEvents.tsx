@@ -1,16 +1,20 @@
 import Event from "../models/Event";
 import axios from "axios";
 
+
 const key = `${process.env.REACT_APP_API_KEY}`
 
 const http = axios.create({
     baseURL: "https://app.ticketmaster.com/discovery/v2/",
     params: {
         apikey : key
-    }
+    },
+    
 })
 
-export default function getEvents (): Promise<Event[]> {
+
+
+export default function getEvents (postalCode?: any): Promise<Event[]> {
    
 
    
@@ -22,13 +26,27 @@ export default function getEvents (): Promise<Event[]> {
         
 //     .then(response => response.data._embedded.events)
 
-    return http.get("/events.json")
+    return http.get("/events.json", {
+    params: {
+        postalCode: postalCode,
+        apikey: key}})
     .then(response => response.data._embedded.events)
 }
 
+// export function getByLocation (postalCode: any): Promise<any> {
+
+//     return http.get(`/events.json?postalCode=${postalCode}`,{
+//         params:{
+//             apikey: key
+//         }})
+//     .then(response => response.data._embedded.events)
+// }
+
 export function getEvent (id: any): Promise<any> {
 
-    return http.get(`/events.json/?id=${id}`)
+    return http.get(`/events/${id}.json`, {
+    params: {
+    apikey: key,}})
     .then(response => response.data._embedded.events)
 
 }

@@ -8,7 +8,13 @@ import {useParams, NavLink, Redirect, BrowserRouter as Router, Switch, Route} fr
 
 
 export default function Homepage () {
+    const[events, setEvents] = useState<Event[]>([])
     
+    function onSubmit (postalCode: any) {
+        let events2 = [...events];
+        events2 = events2.filter((event) => event._embedded === postalCode);
+        setEvents(events2);
+    }
 
     return (
         <div className="container">
@@ -16,7 +22,7 @@ export default function Homepage () {
 
             <h1 className="homeH1"> Home </h1>
 
-            <SearchLocation />
+            <SearchLocation onSubmit={onSubmit}/>
             
 
         </div>

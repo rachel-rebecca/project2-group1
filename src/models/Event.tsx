@@ -14,6 +14,16 @@ interface Genre {
     genre: ID;
 }
 
+interface PostalCode {
+    postalCode: number;
+}
+
+interface Venues {
+    venues: PostalCode;
+}
+
+
+
 
 export default interface Event {
     name?: string | undefined;
@@ -21,6 +31,8 @@ export default interface Event {
     url?: string | undefined;
     dates?: Dates | undefined;
     classifications?: Genre;
+    _embedded?: Venues;
+
 }
 
 

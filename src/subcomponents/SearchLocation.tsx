@@ -1,13 +1,30 @@
-import { useHistory } from "react-router"
+import { useHistory } from "react-router";
+// import {getByLocation} from "../services/GetEvents"
+import { useEffect, useState } from "react";
+import Event from "../models/Event";
+import getEvents from "../services/GetEvents";
 
-export default function SearchLocation () {
+
+export default function SearchLocation ({onSubmit}: {onSubmit: (postalCode:any) => void}) {
+    const[events, setEvents] = useState<Event[]>();
+    const[postalCode, setPostalCode] = useState<number>();
     const history = useHistory();
 
     function handleClick() {
-        history.push("/results")
+        history.push(`/results/${postalCode}`)
     }
 
+    useEffect(() => {
+        getEvents(postalCode).then((events) => { setEvents(events) })  
+    }, []);
+
     return (
-        <div><button type="button" onClick={handleClick}>search</button></div>
+        <form onSubmit={onSubmit}>
+            <label htmlFor="postalCode">
+                Enter your zip code:
+            <input onChange={(e) => {setPostalCode(e.target.valueAsNumber)}} type="number" min={0} max={99999}/>
+            </label>
+            <button type="submit" onClick={handleClick}>search</button>
+        </form>
     )
 }

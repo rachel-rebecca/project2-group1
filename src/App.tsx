@@ -5,18 +5,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import {useParams, NavLink, Redirect, BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Favorites from './components/Favorites';
-import SearchCriteria from './subcomponents/SearchCriteria';
-import SearchLocation from './subcomponents/SearchLocation';
+import SearchCriteria from './subcomponents/SearchCriteria'
 import Results from './components/Results';
-import InfiniteScroll from "react-infinite-scroll-component"
 import EventDetails from './components/EventDetails';
 import Event from './models/Event';
 import {useState} from "react";
-import { stringify } from 'querystring';
+
 
 function App() {
 
-  const[event, setEvent] = useState<Event>({name:"", url:""})
+  const[event, setEvent] = useState<Event>({name:"", url:""});
+  const[events, setEvents] = useState<Event[]>([]);
+
+  function onSubmit (postalCode: any) {
+      let events2 = [...events];
+      events2 = events2.filter((event) => event._embedded === postalCode);
+      setEvents(events2);
+  }
   
   return (
     <div className="App">
@@ -26,7 +31,7 @@ function App() {
       
       <Switch>
         {/* Route to Event Details */}
-        <Route path="/details/:id" exact>
+        <Route path='/details/:id' exact>
           <EventDetails />
         </Route>
         {/* Route to Favorites page */}
