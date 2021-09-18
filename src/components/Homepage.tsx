@@ -23,7 +23,7 @@ export default function Homepage () {
             <h1 className="homeH1"> Home </h1>
 
             <SearchLocation onSubmit={onSubmit}/>
-            
+            {/* onSubmit={onSubmit} */}
 
         </div>
         

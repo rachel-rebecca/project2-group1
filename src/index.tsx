@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import InfiniteScroll from "react-infinite-scroll-component"
 import {BrowserRouter as Router} from "react-router-dom"
+import cors from "cors"
 
 ReactDOM.render(
   <React.StrictMode>

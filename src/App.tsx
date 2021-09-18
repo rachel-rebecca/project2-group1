@@ -38,6 +38,10 @@ function App() {
         <Route path="/favorites" exact>
           <Favorites />
         </Route>
+        {/* Route to Results with postalCode */}
+        <Route path="/results/:postalCode" exact>
+          <Results />
+        </Route> 
         {/* Route to Results */}
         <Route path="/results" exact>
           <Results />

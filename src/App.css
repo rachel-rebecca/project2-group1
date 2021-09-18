@@ -73,3 +73,24 @@ nav {
   height: 100vh;
   
 }
+
+.card h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  margin-bottom: 5px;
+}
+.card h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  margin-bottom: 20px;
+}
+.card button {
+  background-color: magenta;
+  border-radius: 30%;
+  margin-left: 30px;
+}
+.card p {
+  border-bottom: solid black 2px;
+  border-left: solid black 2px;
+  border-right: solid black 2px;
+  border-top: solid black 2px;
+  padding: 10px 10px 10px 10px;
+}

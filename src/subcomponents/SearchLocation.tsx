@@ -18,6 +18,7 @@ export default function SearchLocation ({onSubmit}: {onSubmit: (postalCode:any) 
         getEvents(postalCode).then((events) => { setEvents(events) })  
     }, []);
 
+    
     return (
         <form onSubmit={onSubmit}>
             <label htmlFor="postalCode">

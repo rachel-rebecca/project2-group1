@@ -33,14 +33,11 @@ export default function getEvents (postalCode?: any): Promise<Event[]> {
     .then(response => response.data._embedded.events)
 }
 
-// export function getByLocation (postalCode: any): Promise<any> {
+export function getByLocation (postalCode: any): Promise<any> {
 
-//     return http.get(`/events.json?postalCode=${postalCode}`,{
-//         params:{
-//             apikey: key
-//         }})
-//     .then(response => response.data._embedded.events)
-// }
+    return http.get(`/events.json?postalCode=${postalCode}&apikey=${key}`)
+    .then(response => response.data._embedded.events)
+}
 
 export function getEvent (id: any): Promise<any> {
 

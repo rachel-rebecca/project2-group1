@@ -13,9 +13,9 @@ export default function ResultRow({ id, name, url, dates, classifications, _embe
 
 
     function handleClick() {
-        const Id = id
-        setId(Id)
-        setEvent({name: name, url: url})
+        // const Id = id
+        // setId(Id)
+        // setEvent({name: name, url: url})
         history.push(`/details/${id}${name}`)
     }
   
