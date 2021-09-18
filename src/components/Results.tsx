@@ -16,16 +16,19 @@ export default function Results() {
     const [events, setEvents] = useState<Event[]>([]);
     const{postalCode} = useParams<RouteParams>();
     
-    if (postalCode) {
-        let events2 = [...events];
-        events2 = events2.filter((event) => event._embedded === postalCode)
-        setEvents(events2)
-    }
    
    
     useEffect(() => {
-        getEvents().then((events) => { setEvents(events) })  
-    }, [events]);
+        getEvents(postalCode).then((events) => { setEvents(events) })  
+    }, []);
+
+    if (postalCode) {
+        let events2 = [...events];
+        events2 = events2.filter((event) => event._embedded == postalCode)
+        setEvents(events2)
+        console.log("postal code works")
+    }
+   
 
     // useEffect(() => {
     //     getByLocation(postalCode).then((events) => { setEvents(events) })  
