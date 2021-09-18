@@ -32,6 +32,9 @@ export default interface Event {
     dates?: Dates | undefined;
     classifications?: Genre;
     _embedded?: Venues;
+    locale?: string | undefined;
+    info?: string | undefined;
+    pleaseNote?: string | undefined;
 
 }
 

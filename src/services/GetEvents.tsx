@@ -37,11 +37,7 @@ export function getByLocation(postalCode: any): Promise<any> {
 
 export function getEvent(id?: any): Promise<Event> {
   return http
-    .get(`/events/${id}.json`, {
-      params: {
-        apikey: key,
-      },
-    })
+    .get(`/events/${id}?apikey=${key}&locale=en-us`)
     .then((response) => response.data._embedded.events);
 }
 

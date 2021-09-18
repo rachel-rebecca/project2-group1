@@ -5,34 +5,28 @@ import Event from "../models/Event";
 
 
 interface RouteParams {
-    name: any;
-    url: string;
     id: string;
    
 }
 
-export default function EventDetails () {
-    const {name} = useParams<RouteParams>();
-    const {url} = useParams<RouteParams>();
+export default function EventDetails ({name, url, info, pleaseNote}: Event) {
     const {id} = useParams<RouteParams>();
     const[Id, setId] = useState();
    
     const[event, setEvent] = useState<Event>()
 
     useEffect(() => {
-       
-        getEvent(id).then((event) => { setEvent(event) })  
-    }, [setId]);
+        getEvent(id).then((data) => { setEvent(data) })  
+    }, [setEvent]);
 
     return (
         <div className="container">
             <h1>Event Details</h1>
-             <p>
-            {name}
-            {url}
+            
             {id}
-            {event?.name}
-            </p>
+            {name}
+            {info}
+           
         </div>
     )
 }

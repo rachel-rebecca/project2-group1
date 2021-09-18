@@ -9,13 +9,18 @@ import SearchCriteria from './subcomponents/SearchCriteria'
 import Results from './components/Results';
 import EventDetails from './components/EventDetails';
 import Event from './models/Event';
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import getEvents from './services/GetEvents';
 
 
 function App() {
 
-  const[event, setEvent] = useState<Event>({name:"", url:""});
+  const[event, setEvent] = useState<Event>();
   const[events, setEvents] = useState<Event[]>([]);
+
+  useEffect(() => {
+    getEvents().then((data) => { setEvents(data) })  
+  }, [setEvents]);
 
   function onSubmit (postalCode: any) {
       let events2 = [...events];
@@ -32,7 +37,7 @@ function App() {
       <Switch>
         {/* Route to Event Details */}
         <Route path='/details/:id' exact>
-          <EventDetails />
+        <EventDetails />
         </Route>
         {/* Route to Favorites page */}
         <Route path="/favorites" exact>

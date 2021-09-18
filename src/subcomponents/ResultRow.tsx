@@ -5,6 +5,7 @@ import { Dates } from "../models/Event";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { getEvent } from "../services/GetEvents";
+import EventDetails from "../components/EventDetails";
 
 export default function ResultRow({
   id,
@@ -12,6 +13,8 @@ export default function ResultRow({
   url,
   dates,
   classifications,
+  info,
+  pleaseNote,
   _embedded,
 }: Event) {
   const history = useHistory();
@@ -19,8 +22,9 @@ export default function ResultRow({
   const [event, setEvent] = useState<Event>();
 
   function handleClick() {
-    history.push(`/details/${id}${name}`);
+    history.push(`/details/${id}`);
   }
+
 
   return (
     <Card className="card" style={{ width: "18rem" }}>
@@ -30,7 +34,7 @@ export default function ResultRow({
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
         <Card.Title onClick={handleClick} className="cardTitle">
-          {name}
+          <p>{name}</p>
         </Card.Title>
         <Card.Text className="cardDate">
           {_embedded?.venues.postalCode}

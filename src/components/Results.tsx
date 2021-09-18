@@ -23,7 +23,11 @@ export default function Results() {
         <div className="resultsDiv">
 
             {events?.map((event, index) => {
-                return <ResultRow key={index} id={event.id} name={event.name} url={event.url} dates={event.dates} classifications={event.classifications} _embedded={event._embedded}/>
+                return <ResultRow 
+                key={index} id={event.id} name={event.name} 
+                url={event.url} dates={event.dates} classifications={event.classifications} 
+                _embedded={event._embedded} locale={event.locale} info={event.info}
+                pleaseNote={event.pleaseNote}/>
             })}
 
             {/* Will load next 20 results when clicked */}
