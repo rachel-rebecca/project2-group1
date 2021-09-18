@@ -11,7 +11,7 @@
 
 header {
   width: 100%;
-  height: 6rem;
+  height: 12rem;
   position: absolute;
   left: 0;
   top: 0;
@@ -30,7 +30,7 @@ nav {
   height: 200px;
 }
 .headerH1 {
-  margin-left: 50px;
+  margin-left: 10px;
   height: 100px;
   width: 100px;
   font-family: "Prompt", sans-serif;
@@ -39,7 +39,7 @@ nav {
 .headerUl {
   list-style: none;
   font-size: large;
-
+  
   height: 100px;
   margin: 5px;
   font-family: "Prompt", sans-serif;
@@ -99,6 +99,22 @@ nav {
 }
 
 .resultsDiv {
-  margin-top: 70%;
+  margin-top: 30rem;
   height: 100vh;
+}
+
+
+
+/* ~~~~~~ DESKTOP VIEW ~~~~~~~~~~ */
+
+@media only screen and (min-width: 700px) {
+
+  .headerH1{
+    margin-left: 50px;
+  }
+
+  .headerUl {
+    margin-right: 50px;
+  }
+
 }
