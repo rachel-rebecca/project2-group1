@@ -15,12 +15,14 @@ export default function EventDetails () {
     const {name} = useParams<RouteParams>();
     const {url} = useParams<RouteParams>();
     const {id} = useParams<RouteParams>();
+    const[Id, setId] = useState();
    
     const[event, setEvent] = useState<Event>()
 
     useEffect(() => {
+       
         getEvent(id).then((event) => { setEvent(event) })  
-    }, []);
+    }, [setId]);
 
     return (
         <div className="container">
@@ -29,6 +31,7 @@ export default function EventDetails () {
             {name}
             {url}
             {id}
+            {event?.name}
             </p>
         </div>
     )

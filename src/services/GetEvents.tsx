@@ -39,7 +39,7 @@ export function getByLocation (postalCode: any): Promise<any> {
     .then(response => response.data._embedded.events)
 }
 
-export function getEvent (id: any): Promise<any> {
+export function getEvent (id?: any): Promise<Event> {
 
     return http.get(`/events/${id}.json`, {
     params: {
