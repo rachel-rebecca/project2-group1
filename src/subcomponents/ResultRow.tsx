@@ -37,7 +37,7 @@ export default function ResultRow({
           <p>{name}</p>
         </Card.Title>
         <Card.Text className="cardDate">
-          {_embedded?.venues.postalCode}
+          
           {dates?.start.localDate}
         </Card.Text>
         <button className="cardButton">Buy Tickets</button>

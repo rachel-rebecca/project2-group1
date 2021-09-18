@@ -9,7 +9,7 @@ interface RouteParams {
    
 }
 
-export default function EventDetails ({name, url, info, pleaseNote}: Event) {
+export default function EventDetails () {
     const {id} = useParams<RouteParams>();
     const[Id, setId] = useState();
    
@@ -24,8 +24,7 @@ export default function EventDetails ({name, url, info, pleaseNote}: Event) {
             <h1>Event Details</h1>
             
             {id}
-            {name}
-            {info}
+           
            
         </div>
     )
