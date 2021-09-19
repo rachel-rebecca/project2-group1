@@ -1,5 +1,6 @@
 interface Start {
     localDate: string;
+    localTime: string;
 }
 
 export interface Dates {

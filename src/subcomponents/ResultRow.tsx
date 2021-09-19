@@ -40,6 +40,11 @@ export default function ResultRow({
           {_embedded?.venues.postalCode}
           {dates?.start.localDate}
         </Card.Text>
+        <Card.Text className="cardTime">
+          {_embedded?.venues.postalCode}
+          {dates?.start.localTime}
+        </Card.Text>
+
         <button className="cardButton">Buy Tickets</button>
       </Card.Body>
     </Card>
