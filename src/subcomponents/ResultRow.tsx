@@ -23,8 +23,8 @@ export default function ResultRow({
 
   function handleClick() {
     history.push(`/details/${id}`);
+    <EventDetails name={name} />;
   }
-
 
   return (
     <Card className="card" style={{ width: "18rem" }}>
@@ -36,10 +36,7 @@ export default function ResultRow({
         <Card.Title onClick={handleClick} className="cardTitle">
           <p>{name}</p>
         </Card.Title>
-        <Card.Text className="cardDate">
-          
-          {dates?.start.localDate}
-        </Card.Text>
+        <Card.Text className="cardDate">{dates?.start.localDate}</Card.Text>
         <button className="cardButton">Buy Tickets</button>
       </Card.Body>
     </Card>
