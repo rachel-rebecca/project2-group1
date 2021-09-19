@@ -8,7 +8,7 @@ export default function EventDetails({ name, type, id, locale, dates }: Event) {
     <div className="container">
       <h1>Event Details</h1>
       <h2>{name}</h2>
-      <h3>{dates}</h3>
+      <h3>{dates?.start.localDate}</h3>
       <p>{locale}</p>
       <p>{type}</p>
 
