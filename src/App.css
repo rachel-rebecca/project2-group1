@@ -65,12 +65,14 @@ nav {
 }
 
 .cardTitle:hover {
-  color: lavender;
+  color: orange;
+  cursor: pointer;
 }
 
 .cardTitle {
   font-family: "Prompt", sans-serif;
   font-size: xx-large !important;
+  color:lavender;
 }
 
 .cardDate {

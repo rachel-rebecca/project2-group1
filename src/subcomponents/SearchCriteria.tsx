@@ -1,8 +1,12 @@
 import {useParams, NavLink, Redirect, BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { useHistory } from "react-router";
+import { useState } from "react";
 
 
-export default function SearchCriteria () {
+export default function SearchCriteria ({onSubmit}: {onSubmit: (name?: any, dates?: any) => void}) {
+    const[name, setName] = useState("")
+    const[date, setDate] = useState("")
+    const[events, setEvents] = useState<Event[]>()
     const history = useHistory();
 
     function handleClick() {
@@ -11,13 +15,13 @@ export default function SearchCriteria () {
 
     return (
         <div>
-            <form>
+            <form onSubmit={onSubmit}>
                 <label> Date
-                    <input type="date" />
+                    <input type="date" onChange={(e) => {setDate(e.target.value)}}/>
                 </label>
 
                 <label>
-                    <input />
+                    <input type="text" placeholder="keyword" onChange={(e) => {setName(e.target.value)}} />
                 </label>
 
                 <button type="submit" onClick={handleClick}>Search</button>

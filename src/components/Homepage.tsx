@@ -16,6 +16,11 @@ export default function Homepage () {
         setEvents(events2);
     }
 
+    // function onSubmit(name?: string, dates?: any) {
+    //     getEvents(name, dates).then((data) => 
+    //       setEvents(data))
+    //   }
+
     return (
         <div className="container">
 

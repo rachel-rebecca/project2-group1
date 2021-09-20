@@ -22,11 +22,17 @@ function App() {
     getEvents().then((data) => { setEvents(data) })  
   }, [setEvents]);
 
-  function onSubmit (postalCode: any) {
-      let events2 = [...events];
-      events2 = events2.filter((event) => event._embedded === postalCode);
-      setEvents(events2);
+  // function onSubmit (postalCode: any) {
+  //     let events2 = [...events];
+  //     events2 = events2.filter((event) => event._embedded === postalCode);
+  //     setEvents(events2);
+  // }
+  
+  function onSubmit(name?: string, dates?: any) {
+    getEvents(name, dates).then((data) => 
+      setEvents(data))
   }
+
   
   return (
     <div className="App">
@@ -53,7 +59,7 @@ function App() {
         </Route> 
         {/* Route to SearchCriteria */}
         <Route path="/search" exact>
-          <SearchCriteria />
+          <SearchCriteria onSubmit={onSubmit}/>
         </Route>
         {/* Route to Homepage */}
         <Route path="/" exact>

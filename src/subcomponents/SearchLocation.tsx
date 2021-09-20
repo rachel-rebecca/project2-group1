@@ -14,9 +14,9 @@ export default function SearchLocation ({onSubmit}: {onSubmit: (postalCode:any) 
         history.push(`/results/${postalCode}`)
     }
 
-    useEffect(() => {
-        getEvents(postalCode).then((events) => { setEvents(events) })  
-    }, []);
+    // useEffect(() => {
+    //     getEvents(postalCode).then((events) => { setEvents(events) })  
+    // }, []);
 
     
     return (
