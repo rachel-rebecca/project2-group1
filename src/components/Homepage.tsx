@@ -11,10 +11,15 @@ export default function Homepage () {
     const[events, setEvents] = useState<Event[]>([])
     
     function onSubmit (postalCode: any) {
-        let events2 = [...events];
-        events2 = events2.filter((event) => event._embedded === postalCode);
-        setEvents(events2);
+        // let events2 = [...events];
+        // events2 = events2.filter((event) => event._embedded === postalCode);
+        // setEvents(events2);
     }
+
+    // function onSubmit(name?: string, dates?: any) {
+    //     getEvents(name, dates).then((data) => 
+    //       setEvents(data))
+    //   }
 
     return (
         <div className="container">

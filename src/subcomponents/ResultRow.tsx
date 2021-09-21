@@ -16,6 +16,8 @@ export default function ResultRow({
   info,
   pleaseNote,
   _embedded,
+  locale,
+  type
 }: Event) {
   const history = useHistory();
   const [Id, setId] = useState<string>();
@@ -23,8 +25,8 @@ export default function ResultRow({
 
   function handleClick() {
     history.push(`/details/${id}`);
+    // <EventDetails name={name} info={info} dates={dates} type={type} locale={locale}/>;
   }
-
 
   return (
     <Card className="card" style={{ width: "18rem" }}>
@@ -36,15 +38,7 @@ export default function ResultRow({
         <Card.Title onClick={handleClick} className="cardTitle">
           <p>{name}</p>
         </Card.Title>
-        <Card.Text className="cardDate">
-          {_embedded?.venues.postalCode}
-          {dates?.start.localDate}
-        </Card.Text>
-        <Card.Text className="cardTime">
-          {_embedded?.venues.postalCode}
-          {dates?.start.localTime}
-        </Card.Text>
-
+        <Card.Text className="cardDate">{dates?.start.localDate}</Card.Text>
         <button className="cardButton">Buy Tickets</button>
       </Card.Body>
     </Card>

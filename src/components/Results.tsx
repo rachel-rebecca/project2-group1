@@ -1,6 +1,6 @@
 import ResultRow from "../subcomponents/ResultRow";
 import { useState, useEffect } from "react";
-import getEvents from "../services/GetEvents";
+import getEvents, { getEvent } from "../services/GetEvents";
 import Event from "../models/Event";
 import Header from "./Header";
 import { useParams } from "react-router";
@@ -12,7 +12,9 @@ interface RouteParams {
 export default function Results() {
     const [events, setEvents] = useState<Event[]>([]);
     const{postalCode} = useParams<RouteParams>();
+   
     
+   
 
     useEffect(() => {
         getEvents(postalCode).then((data) => { setEvents(data) })  
@@ -29,6 +31,7 @@ export default function Results() {
                 _embedded={event._embedded} locale={event.locale} info={event.info}
                 pleaseNote={event.pleaseNote}/>
             })}
+            
 
             {/* Will load next 20 results when clicked */}
             {/* <button >Load more results</button> */}

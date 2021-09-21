@@ -1,12 +1,18 @@
+body {
+  font-family: "Prompt", sans-serif;
+}
+
 .container {
   max-width: 100%;
   width: 100vw;
   height: 100vh;
+  color: #bf40af;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Prompt", sans-serif;
 }
 
 header {
@@ -39,7 +45,7 @@ nav {
 .headerUl {
   list-style: none;
   font-size: large;
-  
+
   height: 100px;
   margin: 5px;
   font-family: "Prompt", sans-serif;
@@ -59,12 +65,14 @@ nav {
 }
 
 .cardTitle:hover {
-  color: lavender;
+  color: orange;
+  cursor: pointer;
 }
 
 .cardTitle {
   font-family: "Prompt", sans-serif;
   font-size: xx-large !important;
+  color:lavender;
 }
 
 .cardDate {
@@ -103,18 +111,14 @@ nav {
   height: 100vh;
 }
 
-
-
 /* ~~~~~~ DESKTOP VIEW ~~~~~~~~~~ */
 
 @media only screen and (min-width: 700px) {
-
-  .headerH1{
+  .headerH1 {
     margin-left: 50px;
   }
 
   .headerUl {
     margin-right: 50px;
   }
-
 }
