@@ -17,7 +17,7 @@ body {
 
 header {
   width: 100%;
-  height: 12rem;
+  height: 5rem;
   position: absolute;
   left: 0;
   right: 0;
@@ -33,19 +33,17 @@ nav {
 }
 
 /* ~~~~~~~~~ SMALL PHONE SCREENS~~~~~~~~~~~~~~~~~~~ */
-@media only screen and ( max-width: 450px){
-  
+@media only screen and (max-width: 450px) {
   nav {
     justify-content: space-evenly;
     align-items: center;
     width: 100vw;
   }
 
-
-  img.logo{
+  img.logo {
     height: 100px;
-    width: 100px
-  } 
+    width: 100px;
+  }
 
   .headerUl {
     height: 50px;
@@ -56,15 +54,14 @@ nav {
   }
 
   .headerLi {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 
   .headerH1 {
     display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
   }
-
 }
 
 /* ~~~~~~~~~~~~~~~~~~ MOBILE VIEW ~~~~~~~~~~~~~~~~~~~~ */
@@ -78,8 +75,8 @@ nav {
   margin-left: 10px;
   height: 100px;
   width: 100px;
-  font-family: 'Fredoka One', cursive;
-  color:rgb(22, 170, 170);
+  font-family: "Fredoka One", cursive;
+  color: rgb(22, 170, 170);
   display: flex;
 }
 
@@ -87,15 +84,13 @@ nav {
   color: rgb(209, 209, 214);
 }
 
-
 .headerUl {
   list-style: none;
   font-size: large;
   height: 100px;
   margin: 5px;
-  font-family:'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-
 
 .card {
   border-radius: 30% !important;
@@ -114,15 +109,17 @@ nav {
 .cardTitle {
   font-family: "Prompt", sans-serif;
   font-size: xx-large !important;
-  color:lavender;
+  color: lavender;
 }
 
 .cardDate {
   font-family: "Prompt", sans-serif;
+  font-size: large;
   color: lavender;
 }
 
-.cardButton, button {
+.cardButton,
+button {
   font-family: "Prompt", sans-serif;
   border-radius: 25%;
   background-color: orange;
@@ -138,25 +135,23 @@ a:hover {
 }
 
 button {
-  border:none;
+  border: none;
   border-radius: 5px !important;
-  
 }
 
 button:hover {
   background: rgb(22, 170, 170);
 }
 
-.cardUrl, .searchBtn, .buyTickets {
-  color:rgb(57, 116, 139) !important;
+.cardUrl,
+.searchBtn,
+.buyTickets {
+  color: rgb(57, 116, 139) !important;
 }
-
 
 .starDiv {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 10px;
-  padding-top: 10px;
+  justify-content: center !important;
 }
 
 .fa-star:hover,
@@ -166,23 +161,28 @@ button:hover {
 }
 
 .starDiv i {
-  size: 50px;
   color: orange;
 }
-.homeH1{
+.homeH1 {
   margin-top: 100px;
   display: flex;
-  font-family: 'Fredoka One', cursive;
-  justify-content:center;
+  font-family: "Fredoka One", cursive;
+  justify-content: center;
   align-items: center;
 }
 
-.homeH1, .homeGo{
+.homeH1,
+.homeGo {
   font-size: 4rem;
 }
 
+.container eventDetailsDiv {
+  margin-top: 100px;
+  background-color: orange;
+}
+
 .searchDiv {
-  font-family:'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -210,13 +210,11 @@ button:hover {
 /* ~~~~~~ DESKTOP VIEW ~~~~~~~~~~ */
 
 @media only screen and (min-width: 700px) {
-
   nav {
     justify-content: space-between;
   }
   .headerH1 {
     margin-left: 50px;
-    
   }
 
   .headerUl {
