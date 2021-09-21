@@ -16,6 +16,8 @@ export default function ResultRow({
   info,
   pleaseNote,
   _embedded,
+  locale,
+  type
 }: Event) {
   const history = useHistory();
   const [Id, setId] = useState<string>();
@@ -23,7 +25,7 @@ export default function ResultRow({
 
   function handleClick() {
     history.push(`/details/${id}`);
-    <EventDetails name={name} />;
+    // <EventDetails name={name} info={info} dates={dates} type={type} locale={locale}/>;
   }
 
   return (

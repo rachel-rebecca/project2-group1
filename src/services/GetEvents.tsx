@@ -11,14 +11,6 @@ const http = axios.create({
 });
 
 export default function getEvents(postalCode?: any, name?: any, dates?: any): Promise<Event[]> {
-  // return axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?postalCode=48226&apikey=${key}`)
-  //    return axios.get("https://app.ticketmaster.com/discovery/v2/events.json",{
-  //         params: {postalCode: 48226,
-  //         page: 0,
-  //         apikey : key}})
-
-  //     .then(response => response.data._embedded.events)
-
   return http
     .get("/events.json", {
       params: {

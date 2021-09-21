@@ -31,6 +31,7 @@ export default function Results() {
                 _embedded={event._embedded} locale={event.locale} info={event.info}
                 pleaseNote={event.pleaseNote}/>
             })}
+            
 
             {/* Will load next 20 results when clicked */}
             {/* <button >Load more results</button> */}
