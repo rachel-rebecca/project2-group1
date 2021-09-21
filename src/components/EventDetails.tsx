@@ -8,12 +8,14 @@ import { getDetails } from "../services/GetDetails";
 
 interface Params {
     id: any;
+   
 }
 
 // {name, dates, locale, type, info}: Event
 export default function EventDetails() {
     const[event, setEvent] = useState<Event>()
     const{id} = useParams<Params>();
+    // const{info} = useParams<Params>();
 
     useEffect(() => {
         getDetails(id).then((data) => {
@@ -24,7 +26,8 @@ export default function EventDetails() {
   return (
     <div className="container">
       <h1>Event Details</h1>
-      {/* <h2>{event.name}</h2> */}
+      <h2>{event?.name}</h2>
+      {/* <p>{info}</p> */}
       {/* <h3>{dates?.start.localDate}</h3>
       <p>{event?.locale}</p>
       <p>{type}</p>

@@ -10,13 +10,15 @@ const key = `${process.env.REACT_APP_API_KEY}`
 //       return response.data.complete;
 //     });
 // }
-
+// , name?:any, info?:any
 export function getDetails(id?: any): Promise<Event> {
   return axios
-    .get(`https://app.ticketmaster.com/discovery/v2//events/`, {
+    .get(`https://app.ticketmaster.com/discovery/v2/events/`, {
       params:{
         apikey: key,
-        id: id
+        id: id,
+        // name: name,
+        // info: info
       }
     })
     .then((response) => response.data._embedded.events);
