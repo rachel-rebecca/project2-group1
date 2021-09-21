@@ -19,11 +19,22 @@ interface Params {
 // {name, dates, locale, type, info}: Event
 export default function EventDetails() {
   const [event, setEvent] = useState<GetDetailsInterface>()
+  const [eventName, setEventName] = useState("");
+  const [eventUrl, setEventUrl] = useState("");
   const { id, date, name, info } = useParams<Params>();
 
   useEffect(() => {
     getDetails(id).then((data) => {
-      console.log(data?._embedded?.events)
+      if (data && data._embedded && data._embedded.events && data._embedded.events[0]) {
+
+        console.log(data._embedded.events[0])
+        setEventName(data._embedded.events[0].name)
+        setEventUrl(data._embedded.events[0].url)
+        // setEventName(data._embedded.events[0].date)
+      }
+
+
+
     })
   }, [setEvent]);
 
@@ -34,8 +45,8 @@ export default function EventDetails() {
       <h1>Event Details</h1>
       <h2>id:{id}</h2>
       <h2>date:{date}</h2>
-      <h2>name:{name}</h2>
-      <h2>info:{info}</h2>
+      <h2>name:{eventName}</h2>
+      <h2>url:{eventUrl}</h2>
     </div>
   );
 }

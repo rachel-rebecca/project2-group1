@@ -19,7 +19,7 @@ export interface EventsEntity {
     classifications?: (ClassificationsEntity)[] | null;
     promoter: PromotersEntityOrPromoter;
     promoters?: (PromotersEntityOrPromoter)[] | null;
-    info?: string | null;
+    info?: string;
     pleaseNote: string;
     products?: (ProductsEntity)[] | null;
     seatmap: Seatmap;
