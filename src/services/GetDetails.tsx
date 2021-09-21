@@ -1,5 +1,7 @@
 import axios from "axios";
+import { start } from "repl";
 import Event from "../models/Event";
+import GetDetailsInterface from "../models/GetDetailsInterface";
 
 const key = `${process.env.REACT_APP_API_KEY}`
 
@@ -10,17 +12,19 @@ const key = `${process.env.REACT_APP_API_KEY}`
 //       return response.data.complete;
 //     });
 // }
-// , name?:any, info?:any
-export function getDetails(id?: any): Promise<Event> {
+
+export function getDetails(id?: any, name?: any, date?: any, time?: any, info?: any): Promise<GetDetailsInterface> {
   return axios
     .get(`https://app.ticketmaster.com/discovery/v2/events/`, {
-      params:{
+      params: {
         apikey: key,
         id: id,
-        // name: name,
-        // info: info
+        name: name,
+        date: date,
+        info: info
+        // localTime: localTime
       }
     })
-    .then((response) => response.data._embedded.events);
+    .then((response) => response.data);
 }
 
