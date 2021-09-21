@@ -217,7 +217,30 @@ button:hover {
     margin-left: 50px;
   }
 
+  .headerH1, .go {
+    font-size: 3.5rem;
+  }
+
   .headerUl {
     margin-right: 50px;
+    font-size: 1.5rem;
+    margin: 20px;
   }
+
+  .headerLi {
+    padding-bottom: 10px
+  }
+
+  .homeH1, .homeGo {
+    font-size: 6rem;
+  }
+
+  .searchDiv {
+    font-size: 1.5rem;
+  }
+
+  .searchBtn {
+    width: 125px;
+  }
+
 }
