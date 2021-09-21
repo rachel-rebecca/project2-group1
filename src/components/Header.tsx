@@ -29,11 +29,11 @@ export default function Header() {
         <nav>
           <NavLink to="/" exact>
             {" "}
-            <h1 className="headerH1" onClick={clickHome}>
-              merrygo
+            <h1 className="headerH1 merry" onClick={clickHome}>
+              merry<h1 className="go">go</h1>
             </h1>{" "}
           </NavLink>
-          <div>
+          <div className="logoDiv">
             <img className="logo" src="PPGlogo.png"></img>
           </div>
 

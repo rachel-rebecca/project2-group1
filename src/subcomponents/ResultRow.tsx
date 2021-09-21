@@ -28,6 +28,8 @@ export default function ResultRow({
     // <EventDetails name={name} info={info} dates={dates} type={type} locale={locale}/>;
   }
 
+  
+
   return (
     <Card className="card" style={{ width: "18rem" }}>
       <div className="starDiv">
@@ -39,7 +41,7 @@ export default function ResultRow({
           <p>{name}</p>
         </Card.Title>
         <Card.Text className="cardDate">{dates?.start.localDate}</Card.Text>
-        <button className="cardButton">Buy Tickets</button>
+        <button className="cardButton"><a href={url} className="cardUrl">Buy Tickets</a></button>
       </Card.Body>
     </Card>
   );

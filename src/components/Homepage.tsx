@@ -25,7 +25,7 @@ export default function Homepage () {
         <div className="container">
 
 
-            <h1 className="homeH1"> Home </h1>
+            <h1 className="homeH1 merry">merry<h1 className="go">go</h1></h1>
 
             <SearchLocation onSubmit={onSubmit}/>
             {/* onSubmit={onSubmit} */}

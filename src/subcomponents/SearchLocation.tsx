@@ -17,15 +17,15 @@ export default function SearchLocation({ onSubmit }: { onSubmit: (postalCode: an
     // useEffect(() => {
     //     getEvents(postalCode).then((events) => { setEvents(events) })  
     // }, []);
-
+    // onSubmit={onSubmit}
 
     return (
-        <form onSubmit={onSubmit}>
-            <label htmlFor="postalCode">
+        <div className="searchDiv">
+            <label htmlFor="postalCode" className="zipCodeInput">
                 Enter your zip code:
                 <input onChange={(e) => { setPostalCode(e.target.valueAsNumber) }} type="number" min={1} max={99999} />
             </label>
-            <button type="submit" onClick={handleClick}>search</button>
-        </form>
+            <button type="submit" onClick={handleClick} className="searchBtn">search</button>
+        </div>
     )
 }

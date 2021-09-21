@@ -4,7 +4,7 @@ export default interface GetDetailsInterface {
     page: Page;
 }
 export interface Embedded {
-    events?: (EventsEntity)[];
+    events: (EventsEntity)[];
 }
 export interface EventsEntity {
     name: string;
@@ -19,7 +19,7 @@ export interface EventsEntity {
     classifications?: (ClassificationsEntity)[] | null;
     promoter: PromotersEntityOrPromoter;
     promoters?: (PromotersEntityOrPromoter)[] | null;
-    info?: string | null;
+    info: string;
     pleaseNote: string;
     products?: (ProductsEntity)[] | null;
     seatmap: Seatmap;
@@ -29,7 +29,7 @@ export interface EventsEntity {
     _links: Links1;
     _embedded: Embedded1;
     priceRanges?: (PriceRangesEntity)[] | null;
-    ticketing?: Ticketing | null;
+    ticketing: Ticketing;
 }
 export interface ImagesEntity {
     ratio: string;
@@ -107,7 +107,7 @@ export interface Seatmap {
     staticUrl: string;
 }
 export interface Accessibility {
-    info?: string | null;
+    info: string;
     ticketLimit?: number | null;
 }
 export interface TicketLimit {
