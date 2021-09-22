@@ -6,7 +6,7 @@ import GetDetailsInterface from "../models/GetDetailsInterface"
 
 interface FavoritesProps {
     addToFaves: (event: Event) => void;
-    remove: (url: string) => void;
+    remove: (id: string) => void;
     favoritesList: Event[];
 }
 
@@ -28,9 +28,9 @@ export default function FavoritesProvider({children}: {children: ReactNode}) {
         setFavoritesList(newFavorites)
     }
 
-    function remove(url: string): void {
+    function remove(id: string): void {
         let newFavorites = [...favoritesList];
-        let foundIndex = newFavorites.findIndex(event => event.url == url);
+        let foundIndex = newFavorites.findIndex(event => event.id == id);
         newFavorites.splice(foundIndex, 1)    
         setFavoritesList(newFavorites)
     }

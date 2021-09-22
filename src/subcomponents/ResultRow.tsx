@@ -2,10 +2,11 @@ import Event from "../models/Event";
 import Results from "../components/Results";
 import { Card } from "react-bootstrap";
 import { Dates } from "../models/Event";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router";
 import { getEvent } from "../services/GetEvents";
 import EventDetails from "../components/EventDetails";
+import {Favorites} from "../context/FavoritesProvider"
 
 export default function ResultRow({
   id,
@@ -22,11 +23,20 @@ export default function ResultRow({
   const history = useHistory();
   const [Id, setId] = useState<string>();
   const [event, setEvent] = useState<Event>();
+  const{addToFaves, remove, favoritesList } = useContext(Favorites);
 
   function handleClick() {
     history.push(`/details/${id}`);
     // <EventDetails name={name} info={info} dates={dates} type={type} locale={locale}/>;
   }
+  
+
+  function toggleFavorites() {
+        
+        document.querySelector(".fa-2x")?.classList.toggle("far")
+        document.querySelector(".fa-2x")?.classList.toggle("fas")
+
+    }  
 
   return (
     <Card className="card" style={{ width: "18rem" }}>
@@ -42,7 +52,10 @@ export default function ResultRow({
           </a>
         </button>
       </Card.Body>
-      <div className="starDiv">
+      <div className="starDiv" onClick={(event) => {
+          toggleFavorites();
+          addToFaves(event);
+          console.log(favoritesList)}}>
         <i className="far fa-star fa-2x"></i>
       </div>
     </Card>
