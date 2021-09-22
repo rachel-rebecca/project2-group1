@@ -31,6 +31,7 @@ nav {
   height: 175px;
 }
 
+
 /* ~~~~~~~~~ SMALL PHONE SCREENS~~~~~~~~~~~~~~~~~~~ */
 @media only screen and (max-width: 450px) {
   nav {
@@ -145,7 +146,7 @@ button {
   border: none;
   padding: 10px;
   width: 50%;
-  length: 20px;
+  height: 20px;
   border-radius: 25% !important;
 }
 
@@ -189,19 +190,9 @@ button:hover {
   font-size: 4rem;
 }
 
-<<<<<<< HEAD
-.EventName {
-  color: #40b4bf;
-  background-color: #bf40af;
-}
-
-.EventDate {
-  font-size: xx-large;
-=======
 .container .eventDetailsDiv {
   margin-top: 100px;
   background-color: orange;
->>>>>>> 4e216173ed47ebe107a7785c1d8c4dc46051f01e
 }
 
 .searchDiv {

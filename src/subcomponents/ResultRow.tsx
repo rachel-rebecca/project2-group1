@@ -30,12 +30,9 @@ export default function ResultRow({
     // <EventDetails name={name} info={info} dates={dates} type={type} locale={locale}/>;
   }
   
-
+ 
   function toggleFavorites() {
-        
-        document.querySelector(".fa-2x")?.classList.toggle("far")
-        document.querySelector(".fa-2x")?.classList.toggle("fas")
-
+        document.querySelector(".fa-2x")?.classList.toggle("fas");
     }  
 
   return (
@@ -56,7 +53,7 @@ export default function ResultRow({
           toggleFavorites();
           addToFaves(event);
           console.log(favoritesList)}}>
-        <i className="far fa-star fa-2x"></i>
+        <i className={"fa-star fa-2x far"}></i>
       </div>
     </Card>
   );
