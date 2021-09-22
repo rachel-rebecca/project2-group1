@@ -5,12 +5,12 @@ import { useHistory } from "react-router";
 import { getEvent } from "../services/GetEvents";
 import ResultRow from "../subcomponents/ResultRow";
 import { getDetails } from "../services/GetDetails";
-import { Embedded } from "../models/Event"
-import { VenuesEntity } from "../models/Event"
-import GetDetailsInterface from "../models/GetDetailsInterface"
+import { Embedded } from "../models/Event";
+import { VenuesEntity } from "../models/Event";
+import GetDetailsInterface from "../models/GetDetailsInterface";
 import { start } from "repl";
 import { Link } from "react-router-dom";
-
+import "../App.css";
 
 interface Params {
   id: any;
@@ -18,7 +18,7 @@ interface Params {
 
 // {name, dates, locale, type, info}: Event
 export default function EventDetails() {
-  const [event, setEvent] = useState<GetDetailsInterface>()
+  const [event, setEvent] = useState<GetDetailsInterface>();
   const [eventName, setEventName] = useState("");
   const [eventUrl, setEventUrl] = useState("");
   const [info, setInfo] = useState("");
@@ -30,8 +30,12 @@ export default function EventDetails() {
 
   useEffect(() => {
     getDetails(id).then((data) => {
-      if (data && data._embedded && data._embedded.events && data._embedded.events[0]) {
-
+      if (
+        data &&
+        data._embedded &&
+        data._embedded.events &&
+        data._embedded.events[0]
+      ) {
         console.log(data._embedded.events[0]);
         setEventName(data._embedded.events[0].name);
         setEventUrl(data._embedded.events[0].url);
@@ -39,35 +43,53 @@ export default function EventDetails() {
         setEventTime(data._embedded.events[0].dates.start.localTime);
         setInfo(data._embedded.events[0].info);
         setAccess(data._embedded.events[0].accessibility.info);
-        if (data._embedded.events[0].ticketing?.healthCheck?.description.length > 0) {
-          setHealthCheck(data._embedded.events[0].ticketing?.healthCheck?.description)
+        if (
+          data._embedded.events[0].ticketing?.healthCheck?.description.length >
+          0
+        ) {
+          setHealthCheck(
+            data._embedded.events[0].ticketing?.healthCheck?.description
+          );
         } else {
-          setHealthCheck("None")
+          setHealthCheck("None");
         }
       }
-    })
+    });
   }, [setEvent]);
-
 
   useEffect(() => {
     getDetails(id).then((data) => {
-      console.log(data)
-    })
+      console.log(data);
+    });
   }, [setEvent]);
 
   return (
     <div className="container eventDetailsDiv">
-      <h1>Event Details:</h1>
-      <h2>{eventName}</h2>
-      <h4>Date: {eventDate}</h4>
+      <h1>Event Details</h1>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h2 className="EventName">{eventName}</h2>
+      <h4 className="EventDate">Date: {eventDate}</h4>
       <h4>Time: {eventTime}</h4>
       <details>
-        <summary> More Info</summary>
-        <p><strong>Note:</strong> {info} </p>
-        <p><strong>Accessibility:</strong> {access}</p>
-        <p><strong>Healthcheck:</strong> {healthcheck}</p>
+        <summary className="Summary"> More Info</summary>
+        <p>
+          <strong>Note:</strong> {info}{" "}
+        </p>
+        <p>
+          <strong>Accessibility:</strong> {access}
+        </p>
+        <p>
+          <strong>Healthcheck:</strong> {healthcheck}
+        </p>
       </details>
-      <button><a href={eventUrl} className="buyTickets">Buy Tickets</a></button>
+      <button>
+        <a href={eventUrl} className="buyTickets">
+          Buy Tickets
+        </a>
+      </button>
     </div>
   );
 }

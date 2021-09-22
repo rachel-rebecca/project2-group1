@@ -18,7 +18,7 @@ body {
 header {
   width: 100%;
   height: 5rem;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
@@ -28,7 +28,6 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: solid black 10px;
   height: 175px;
 }
 
@@ -68,6 +67,10 @@ nav {
   }
 }
 
+.formDate {
+  margin-bottom: 50px;
+}
+
 /* ~~~~~~~~~~~~~~~~~~ MOBILE VIEW ~~~~~~~~~~~~~~~~~~~~ */
 
 .logo {
@@ -80,7 +83,7 @@ nav {
   height: 100px;
   width: 100px;
   font-family: "Fredoka One", cursive;
-  color: rgb(22, 170, 170);
+  color: #40b4bf;
   display: flex;
 }
 
@@ -131,7 +134,7 @@ button {
 
 a {
   text-decoration: none !important;
-  color: rgb(22, 170, 170) !important;
+  color: #40b4bf !important;
 }
 
 a:hover {
@@ -140,17 +143,23 @@ a:hover {
 
 button {
   border: none;
-  border-radius: 5px !important;
+  padding: 10px;
+  width: 50%;
+  length: 20px;
+  border-radius: 25% !important;
 }
 
+.Summary {
+  margin-bottom: 50px;
+}
 button:hover {
-  background: rgb(22, 170, 170);
+  background: #40b4bf;
 }
 
 .cardUrl,
 .searchBtn,
 .buyTickets {
-  color: rgb(57, 116, 139) !important;
+  color: #40b4bf !important;
 }
 
 .starDiv {
@@ -180,9 +189,19 @@ button:hover {
   font-size: 4rem;
 }
 
+<<<<<<< HEAD
+.EventName {
+  color: #40b4bf;
+  background-color: #bf40af;
+}
+
+.EventDate {
+  font-size: xx-large;
+=======
 .container .eventDetailsDiv {
   margin-top: 100px;
   background-color: orange;
+>>>>>>> 4e216173ed47ebe107a7785c1d8c4dc46051f01e
 }
 
 .searchDiv {
@@ -195,7 +214,7 @@ button:hover {
 .zipCodeInput {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .searchBtn {
@@ -221,7 +240,8 @@ button:hover {
     margin-left: 50px;
   }
 
-  .headerH1, .go {
+  .headerH1,
+  .go {
     font-size: 3.5rem;
   }
 
@@ -232,10 +252,11 @@ button:hover {
   }
 
   .headerLi {
-    padding-bottom: 10px
+    padding-bottom: 10px;
   }
 
-  .homeH1, .homeGo {
+  .homeH1,
+  .homeGo {
     font-size: 6rem;
   }
 
@@ -246,5 +267,4 @@ button:hover {
   .searchBtn {
     width: 125px;
   }
-
 }
