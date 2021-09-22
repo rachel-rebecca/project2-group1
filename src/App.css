@@ -31,7 +31,6 @@ nav {
   height: 175px;
 }
 
-
 /* ~~~~~~~~~ SMALL PHONE SCREENS~~~~~~~~~~~~~~~~~~~ */
 @media only screen and (max-width: 450px) {
   nav {
@@ -63,7 +62,8 @@ nav {
     align-items: center;
   }
 
-  .fa-search, .far-star {
+  .fa-search,
+  .far-star {
     padding-right: 2px;
   }
 }
@@ -146,7 +146,7 @@ button {
   border: none;
   padding: 10px;
   width: 50%;
-  height: 20px;
+
   border-radius: 25% !important;
 }
 
@@ -192,7 +192,6 @@ button:hover {
 
 .container .eventDetailsDiv {
   margin-top: 100px;
-  background-color: orange;
 }
 
 .searchDiv {

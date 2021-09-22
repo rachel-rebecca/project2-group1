@@ -26,6 +26,7 @@ export default function EventDetails() {
   const [healthcheck, setHealthCheck] = useState("");
   const [eventDate, setEventDate] = useState("");
   const [eventTime, setEventTime] = useState("");
+  const [genre, setGenre] = useState("");
   const { id } = useParams<Params>();
 
   useEffect(() => {
@@ -43,6 +44,10 @@ export default function EventDetails() {
         setEventTime(data._embedded.events[0].dates.start.localTime);
         setInfo(data._embedded.events[0].info);
         setAccess(data._embedded.events[0].accessibility.info);
+        setGenre(
+          data._embedded.events[0].genre
+            .SegmentOrGenreOrSubGenreOrTypeOrSubTypeOrMarketsEntity
+        );
         if (
           data._embedded.events[0].ticketing?.healthCheck?.description.length >
           0
@@ -83,6 +88,10 @@ export default function EventDetails() {
         </p>
         <p>
           <strong>Healthcheck:</strong> {healthcheck}
+        </p>
+        <p>
+          <strong>Genre:</strong>
+          {genre}
         </p>
       </details>
       <button>
