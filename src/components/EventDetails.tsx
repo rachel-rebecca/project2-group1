@@ -45,8 +45,7 @@ export default function EventDetails() {
         setInfo(data._embedded.events[0].info);
         setAccess(data._embedded.events[0].accessibility.info);
         setGenre(
-          data._embedded.events[0].genre
-            .SegmentOrGenreOrSubGenreOrTypeOrSubTypeOrMarketsEntity
+          data._embedded.events[0].classifications[0].genre.name
         );
         if (
           data._embedded.events[0].ticketing?.healthCheck?.description.length >
@@ -90,7 +89,7 @@ export default function EventDetails() {
           <strong>Healthcheck:</strong> {healthcheck}
         </p>
         <p>
-          <strong>Genre:</strong>
+          <strong>Genre: </strong>
           {genre}
         </p>
       </details>

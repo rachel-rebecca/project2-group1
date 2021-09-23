@@ -10,17 +10,26 @@ const http = axios.create({
   },
 });
 
-export default function getEvents(postalCode?: any, name?: any, dates?: any): Promise<Event[]> {
+const radius = "5000" || undefined;
+
+export default function getEvents(keyword?: any, name?: any, dates?: any): Promise<Event[]> {
   return http
     .get("/events.json", {
       params: {
-        postalCode: postalCode,
+        apikey: key,
+        keyword: keyword,
         name: name,
         date: dates,
-        apikey: key,
+        venueId: undefined,
+        postalCode: "48226",
+        radius: radius,
       },
     })
-    .then((response) => response.data._embedded.events);
+    .then((response) => response.data._embedded.events).catch(function (error) {
+      console.log("we have an error!")
+      // document.location.href = "https://www.google.com" // **ERROR CODE HERE**
+
+    })
 }
 
 export function getByLocation(postalCode: any): Promise<any> {

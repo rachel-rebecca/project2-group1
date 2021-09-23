@@ -16,7 +16,7 @@ export interface EventsEntity {
     images?: (ImagesEntity)[] | null;
     sales: Sales;
     dates: Dates;
-    classifications?: (ClassificationsEntity)[] | null;
+    classifications: (ClassificationsEntity)[];
     promoter: PromotersEntityOrPromoter;
     promoters?: (PromotersEntityOrPromoter)[] | null;
     info: string;
@@ -118,7 +118,7 @@ export interface AgeRestrictions {
 }
 export interface Links1 {
     self: AttractionsEntityOrVenuesEntityOrSelfOrFirstOrNextOrLast;
-    attractions?: (AttractionsEntityOrVenuesEntityOrSelfOrFirstOrNextOrLast)[] | null;
+    attractions: (AttractionsEntityOrVenuesEntityOrSelfOrFirstOrNextOrLast)[] | null;
     venues?: (AttractionsEntityOrVenuesEntityOrSelfOrFirstOrNextOrLast)[] | null;
 }
 export interface AttractionsEntityOrVenuesEntityOrSelfOrFirstOrNextOrLast {
@@ -126,7 +126,7 @@ export interface AttractionsEntityOrVenuesEntityOrSelfOrFirstOrNextOrLast {
 }
 export interface Embedded1 {
     venues?: (VenuesEntity)[] | null;
-    attractions?: (AttractionsEntity)[] | null;
+    attractions: (AttractionsEntity)[];
 }
 export interface VenuesEntity {
     name: string;

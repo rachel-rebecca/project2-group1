@@ -6,37 +6,50 @@ import Header from "./Header";
 import { useParams } from "react-router";
 
 interface RouteParams {
-    postalCode: any;
+    keyword: string;
 }
 
 export default function Results() {
     const [events, setEvents] = useState<Event[]>([]);
-    const{postalCode} = useParams<RouteParams>();
-   
-    
-   
+    const { keyword } = useParams<RouteParams>();
+
+    const [criteria, setCriteria] = useState<string>();
+
+
+
 
     useEffect(() => {
-        getEvents(postalCode).then((data) => { setEvents(data) })  
+        getEvents(keyword).then((data) => { setEvents(data) })
     }, [setEvents]);
- 
+
+    function searchCriteria(criteria: any) {
+
+        let criteriaArray = [...events];
+
+        return (
+            criteriaArray.filter(findEvent => findEvent == criteria)
+        )
+    }
 
     return (
         <div className="resultsDiv">
 
+            {/* <input className="criteria" type="text" placeholder="keyword" onChange={(event) => { setCriteria(event.target.value) }} /> */}
+            {/* <button className="criteria" type="submit" onSubmit={searchCriteria(criteria)} >search</button> */}
+
             {events?.map((event, index) => {
-                return <ResultRow 
-                key={index} id={event.id} name={event.name} 
-                url={event.url} dates={event.dates} classifications={event.classifications} 
-                _embedded={event._embedded} locale={event.locale} info={event.info}
-                pleaseNote={event.pleaseNote}/>
+                return <ResultRow
+                    key={index} id={event.id} name={event.name}
+                    url={event.url} dates={event.dates} classifications={event.classifications}
+                    _embedded={event._embedded} locale={event.locale} info={event.info}
+                    pleaseNote={event.pleaseNote} />
             })}
-            
+
 
             {/* Will load next 20 results when clicked */}
             {/* <button >Load more results</button> */}
 
-           
+
 
 
         </div>
