@@ -50,11 +50,15 @@ export default function ResultRow({
       </Card.Body>
       <div
         className="starDiv"
-        onClick={(event) => {
-          // toggleFavorites();
-          addToFaves(event);
-          console.log(favoritesList);
-          event.target.classList.toggle("fas");
+        // onClick={(event) => {
+        //   // toggleFavorites();
+        //   addToFaves(event);
+        //   console.log(favoritesList);
+        //   event.target.classList.toggle("fas");
+        // }}
+        onClick={(event) =>{
+            const target = event.target as Element;
+            target.classList.toggle("fas")
         }}
       >
         <i className={"fa-star fa-2x far"}></i>
