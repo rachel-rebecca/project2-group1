@@ -12,7 +12,11 @@ const http = axios.create({
 
 const radius = "5000" || undefined;
 
-export default function getEvents(keyword?: any, name?: any, dates?: any): Promise<Event[]> {
+export default function getEvents(
+  keyword?: any,
+  name?: any,
+  dates?: any
+): Promise<Event[]> {
   return http
     .get("/events.json", {
       params: {
@@ -25,11 +29,11 @@ export default function getEvents(keyword?: any, name?: any, dates?: any): Promi
         radius: radius,
       },
     })
-    .then((response) => response.data._embedded.events).catch(function (error) {
-      console.log("we have an error!")
-      // document.location.href = "https://www.google.com" // **ERROR CODE HERE**
-
-    })
+    .then((response) => response.data._embedded.events)
+    .catch(function (error) {
+      console.log("we have an error!");
+      document.location.href = "https://www.google.com"; // **ERROR CODE HERE**
+    });
 }
 
 export function getByLocation(postalCode: any): Promise<any> {

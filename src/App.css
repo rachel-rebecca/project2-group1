@@ -17,6 +17,7 @@ body {
 
 header {
   width: 100%;
+  background-color: white;
   height: 5rem;
   position: fixed;
   left: 0;
@@ -26,9 +27,11 @@ header {
 
 nav {
   display: flex;
+  background-color: white;
+  border-bottom: black solid 2px;
   justify-content: space-around;
   align-items: center;
-  height: 175px;
+  height: 150px;
 }
 
 /* ~~~~~~~~~ SMALL PHONE SCREENS~~~~~~~~~~~~~~~~~~~ */
@@ -101,22 +104,24 @@ nav {
 }
 
 .card {
-  border-radius: 30% !important;
+  border-radius: 20% !important;
   background-color: #bf40af !important;
-  height: 250px;
+  height: 300px;
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
 }
 
 .cardTitle:hover {
-  color: orange;
+  color: #ee810f;
   cursor: pointer;
 }
 
 .cardTitle {
   font-family: "Prompt", sans-serif;
-  font-size: xx-large !important;
+  display: flex;
+  justify-content: center;
+  font-size: large !important;
   color: lavender;
 }
 
@@ -129,8 +134,8 @@ nav {
 .cardButton,
 button {
   font-family: "Prompt", sans-serif;
-  border-radius: 25%;
-  background-color: orange;
+  border-radius: 5%;
+  background-color: #ee810f;
 }
 
 a {
@@ -139,15 +144,15 @@ a {
 }
 
 a:hover {
-  color: orange !important;
+  color: #ee810f !important;
 }
 
 button {
   border: none;
   padding: 10px;
-  width: 50%;
+  width: 200px;
 
-  border-radius: 25% !important;
+  border-radius: 5% !important;
 }
 
 .Summary {
@@ -166,6 +171,7 @@ button:hover {
 .starDiv {
   display: flex;
   justify-content: center !important;
+  margin-bottom: 50px;
 }
 
 .fa-star:hover,
@@ -175,7 +181,7 @@ button:hover {
 }
 
 .starDiv i {
-  color: orange;
+  color: #ee810f;
 }
 .homeH1 {
   margin-top: 100px;
@@ -190,8 +196,8 @@ button:hover {
   font-size: 4rem;
 }
 
-.container .eventDetailsDiv {
-  margin-top: 100px;
+.eventDetailsDiv {
+  margin-top: 300px;
 }
 
 .searchDiv {

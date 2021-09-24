@@ -27,6 +27,7 @@ export default function EventDetails() {
   const [eventDate, setEventDate] = useState("");
   const [eventTime, setEventTime] = useState("");
   const [genre, setGenre] = useState("");
+  const [venue, setVenue] = useState("");
   const { id } = useParams<Params>();
 
   useEffect(() => {
@@ -44,9 +45,8 @@ export default function EventDetails() {
         setEventTime(data._embedded.events[0].dates.start.localTime);
         setInfo(data._embedded.events[0].info);
         setAccess(data._embedded.events[0].accessibility.info);
-        setGenre(
-          data._embedded.events[0].classifications[0].genre.name
-        );
+        setGenre(data._embedded.events[0].classifications[0].genre.name);
+        setVenue(data._embedded.events[0]._embedded.venues[0].name);
         if (
           data._embedded.events[0].ticketing?.healthCheck?.description.length >
           0
@@ -69,14 +69,13 @@ export default function EventDetails() {
 
   return (
     <div className="container eventDetailsDiv">
-      <h1>Event Details</h1>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <h2 className="EventName">{eventName}</h2>
-      <h4 className="EventDate">Date: {eventDate}</h4>
-      <h4>Time: {eventTime}</h4>
+      <h2 className="EventName">
+        <strong>{eventName}</strong>
+      </h2>
+      <h3>Venue: {venue}</h3>
+      <span className="EventDate">Date: {eventDate}</span>
+      <span>Time: {eventTime}</span>
+
       <details>
         <summary className="Summary"> More Info</summary>
         <p>
