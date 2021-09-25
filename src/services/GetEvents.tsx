@@ -45,7 +45,7 @@ export default function getEvents(
 
 export function getByLocation(latlong: any, keyword: any, startDateTime: any, endDateTime: any, page: any): Promise<any> {
   return http
-    .get(`/events.json?keyword=${keyword}&latlong=${latlong}&radius=100&locale=*&startDateTime=${startDateTime}&endDateTime=${endDateTime}&apikey=${key}&page=${page}`)
+    .get(`/events.json?keyword=${keyword}&latlong=${latlong}&radius=100&locale=*&startDateTime=${startDateTime}&endDateTime=${endDateTime}&apikey=${key}&page=${page}&sort=distance,asc`)
     .then((response) => response.data._embedded.events);
 }
 

@@ -12,7 +12,7 @@ export default function Homepage () {
     
    
     return (
-        <div className="container">
+        <div >
 
 
             <h1 className="homeH1 merry">merry<div className="go homeGo">go</div></h1>

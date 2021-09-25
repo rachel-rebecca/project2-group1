@@ -1,18 +1,25 @@
 body {
   font-family: "Prompt", sans-serif;
+  position: relative;
+  
+}
+
+html {
+  height: 100vh;
 }
 
 .container {
   max-width: 100%;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   color: #bf40af;
-  margin: auto;
+  margin: 150px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "Prompt", sans-serif;
+ 
 }
 
 header {
@@ -23,6 +30,8 @@ header {
   left: 0;
   right: 0;
   top: 0;
+  z-index: 1;
+  
 }
 
 nav {
@@ -32,6 +41,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 150px;
+  z-index: 1;
 }
 
 /* ~~~~~~~~~ SMALL PHONE SCREENS~~~~~~~~~~~~~~~~~~~ */
@@ -208,7 +218,7 @@ button:hover {
   display: flex;
   font-family: "Fredoka One", cursive;
   justify-content: center; 
-  margin-top: 100px;
+  margin-top: 0px;
 }
 
 .homeH1,
@@ -218,14 +228,15 @@ button:hover {
 }
 
 .eventDetailsDiv {
-  margin-top: 300px;
-  padding: 5px;
+  margin-top: 150px;
+  padding: 150px 5px;
   font-family: "Montserrat", sans-serif;
   width: 100vw;
+  height: 200vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .EventName {
@@ -233,13 +244,22 @@ button:hover {
   text-align: center;
 }
 
+.eventVenue {
+  padding-top: 20px;
+}
+
 .EventDate,
 .EventTime {
   font-size: 1.25rem;
+  padding-top: 10px;
 }
 
 .Summary {
   font-size: 1.25rem;
+}
+
+details {
+  padding-top: 10px;
 }
 
 .search {
@@ -273,13 +293,11 @@ button:hover {
 }
 
 .resultsDiv {
-  margin-top: 25rem;
+  margin-top: 15rem;
   height: 100vh;
+  
 }
 
-.eventDetailsDiv {
-  height: 100vh;
-}
 
 /* ~~~~~~ DESKTOP VIEW ~~~~~~~~~~ */
 
@@ -296,6 +314,7 @@ button:hover {
   .headerH1 {
     margin-left: 20px;
     margin-right: 45px;
+   
   }
 
   .headerH1,
@@ -332,6 +351,8 @@ button:hover {
   .eventDetailsDiv {
      border-right: lavender solid 20vw;
      border-left: lavender solid 20vw;
+    
+
   }
  
 }

@@ -43,8 +43,30 @@ export default function EventDetails() {
         setEventUrl(data._embedded.events[0].url);
         setEventDate(data._embedded.events[0].dates.start.localDate);
         setEventTime(data._embedded.events[0].dates.start.localTime);
-        setInfo(data._embedded.events[0].info);
-        setAccess(data._embedded.events[0].accessibility.info);
+         if (
+          data._embedded.events[0].ticketing?.healthCheck?.description.length >
+          0
+        ) {
+          setHealthCheck(
+            data._embedded.events[0].ticketing?.healthCheck?.description
+          );
+        } else {
+          setHealthCheck("None");
+        }
+
+        if (data._embedded.events[0]?.info) {
+            setInfo(data._embedded.events[0]?.info);
+        } else {
+            setInfo("None");
+        }
+
+        if (data._embedded.events[0].accessibility?.info.length > 0) {
+            setAccess(data._embedded.events[0].accessibility?.info);
+        } else {
+            setAccess("None listed");
+        }
+        
+        
         setGenre(data._embedded.events[0].classifications[0].genre.name);
         setVenue(data._embedded.events[0]._embedded.venues[0].name);
         if (
@@ -112,7 +134,7 @@ export default function EventDetails() {
       <h2 className="EventName">
            <strong> {eventName} </strong>
       </h2>
-      <h3><strong>Venue:</strong> {venue}</h3>
+      <h3 className="eventVenue"><strong>Venue:</strong> {venue}</h3>
       <span className="EventDate"><strong>Date:</strong> {formatDate()}</span>
       <span className="EventTime"><strong>Time:</strong> {formatTime()}</span>
 
