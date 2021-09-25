@@ -219,9 +219,9 @@ button:hover {
 
 .eventDetailsDiv {
   margin-top: 300px;
-  border: slategrey solid 2px;
+  padding: 5px;
   font-family: "Montserrat", sans-serif;
-  width: 70vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -329,5 +329,9 @@ button:hover {
     padding: 0;
   }
 
+  .eventDetailsDiv {
+     border-right: lavender solid 20vw;
+     border-left: lavender solid 20vw;
+  }
  
 }
