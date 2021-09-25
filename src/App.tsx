@@ -50,13 +50,13 @@ function App() {
             <Favorites />
           </Route>
           {/* Route to Results with postalCode */}
-          <Route path="/results/:keyword" exact>
-            <Results />
+          <Route path="/results/:keyword/:latlong/:startDateTime/:endDateTime" exact>
+            <Results/>
           </Route>
           {/* Route to Results */}
-          <Route path="/results" exact>
+          {/* <Route path="/results" exact>
             <Results />
-          </Route>
+          </Route> */}
           {/* Route to SearchCriteria */}
           <Route path="/search" exact>
             <SearchCriteria onSubmit={onSubmit} />

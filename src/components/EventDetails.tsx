@@ -67,14 +67,54 @@ export default function EventDetails() {
     });
   }, [setEvent]);
 
+
+  function formatDate(){
+    let date = eventDate;
+    // convert date to an array
+    let dateArray = date?.split("");
+    // slice array off at last two indices to get day value
+    let day = dateArray?.slice(-2);
+    // slice at index 5 and 7 to get the month
+    let month = dateArray?.slice(5,7);
+    // slice at 0 and 4 to get the year
+    let year = dateArray?.slice(0, 4);
+    // slcie leaves them all in new arrays. Need to make them string values.
+    let dayString = day?.join("");
+    let monthString = month?.join("");
+    let yearString = year?.join("");
+    // return all values in a new string format
+    return monthString + "/" + dayString + "/" + yearString
+    }
+
+    function formatTime(){
+        let time = eventTime.split(":"); // convert to array
+        // fetch
+        var hours = Number(time[0]);
+        var minutes = Number(time[1]);
+      
+        // calculate
+        var timeValue;
+        if (hours > 0 && hours <= 12) {
+          timeValue= "" + hours;
+        } else if (hours > 12) {
+          timeValue= "" + (hours - 12);
+        } else if (hours == 0) {
+          timeValue= "12";
+        }  
+        timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;  // get minutes
+        timeValue += (hours >= 12) ? " P.M." : " A.M.";
+
+        return timeValue
+        }
+
   return (
     <div className="container eventDetailsDiv">
       <h2 className="EventName">
         <strong>{eventName}</strong>
       </h2>
       <h3>Venue: {venue}</h3>
-      <span className="EventDate">Date: {eventDate}</span>
-      <span>Time: {eventTime}</span>
+      <span className="EventDate">Date: {formatDate()}</span>
+      <span>Time: {formatTime()}</span>
 
       <details>
         <summary className="Summary"> More Info</summary>

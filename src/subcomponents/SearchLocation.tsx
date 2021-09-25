@@ -2,56 +2,84 @@ import { useHistory } from "react-router";
 // import {getByLocation} from "../services/GetEvents"
 import { useEffect, useState } from "react";
 import Event from "../models/Event";
+import { LongLat } from "../models/LongLat";
 import getEvents from "../services/GetEvents";
+import Results from "../components/Results";
+import { useParams, NavLink, Redirect, BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
-export default function SearchLocation({
-  onSubmit,
-}: {
-  onSubmit: (postalCode: any) => void;
-}) {
-  const [events, setEvents] = useState<Event[]>();
-  // const [postalCode, setPostalCode] = useState<number>();
+export default function SearchLocation() {
+  const [events, setEvents] = useState<Event[]>([]);
+  const [postalCode, setPostalCode] = useState<any>();
   const [keyword, setKeyword] = useState<any>();
+  const [latlong, setLatlong] = useState<any>();
+  const [startDateTime, setStartDateTime] = useState<any>();
+  const [endDateTime, setEndDateTime] = useState<any>();
   const history = useHistory();
 
   function handleClick() {
-    history.push(`/results/${keyword}`);
+    history.push(`/results/${keyword}/${latlong}/${startDateTime}/${endDateTime}`);
+   
+    
   }
 
-  // useEffect(() => {
-  //     getEvents(postalCode).then((events) => { setEvents(events) })
-  // }, []);
-  // onSubmit={onSubmit}
+//   useEffect(() => {
+//     getEvents(keyword).then((data) => { setEvents(data) })
+// }, [setEvents]);
+
 
   return (
     <div className="search">
-
-
-
+    {/* Label and input for keyword */}
       <label htmlFor="keyword" className="zipCodeInput">
-        {/* Enter your zip code: */}
         Enter a Keyword:
-        <input
+        <input required
           // setPostalCode(e.target.valueAsNumber);
-
           onChange={(e) => {
-            setKeyword(e.target.value);
-            // if there is a 5 digit number....log it
-            if ((/\d{5}/).test(e.target.value)) {
-              console.log("zipcode is: ", e.target.value.match(/\d{5}/)![0]);
-
-            }
-
-
+              setKeyword(e.target.value)
+            // setKeyword(e.target.value.match(/^\w+/)![0])
+            // // if there is a 5 digit number....log it
+            // if ((/\d{5}/).test(e.target.value)) {
+            //   console.log("zipcode is: ", e.target.value.match(/\d{5}/)![0]);
+            //     setPostalCode(e.target.value.match(/\d{5}/)![0]);   
+            //     console.log("keyword:", keyword)
+            // }
           }}
-
-
-
           type="text"
-        // min={1}
-        // max={99999}
-        />
+       />
       </label>
+    {/* Label and input for zipcode which is converted to latitude and longitude  */}
+        <label htmlFor="zipcode" className="zipCodeInput">
+          Enter your zipcode:
+          <input required onChange={(e) => {
+                if(e.target.value.length == 5) {
+                    LongLat.forEach(array => {
+                        if(array[0] == e.target.value) {
+                            setLatlong(""+array[1]+","+array[2]+"")
+                            console.log(latlong)
+                        }
+                    })
+                }
+                }}/>
+        </label>
+    {/* Label and input for date which are formatted to ticketmaster's liking*/}
+        <label className="zipCodeInput">
+             Select start date:
+            <input required type="date" onChange={(e) => {
+                console.log(e.target.value)
+                const dateTime = e.target.value + "T00:00:00Z"
+              setStartDateTime(dateTime);
+            }}
+          />
+        </label>
+        <label className="zipCodeInput">
+             Select end date:
+            <input required type="date" onChange={(e) => {
+                const dateTime = e.target.value + "T00:00:00Z"
+              setEndDateTime(dateTime);
+            }}
+          />
+        </label>
+
       <button type="submit" onClick={handleClick} className="searchBtn">
         search
       </button>

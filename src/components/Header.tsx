@@ -30,7 +30,7 @@ export default function Header() {
           <NavLink to="/" exact>
             {" "}
             <h1 className="headerH1 merry" onClick={clickHome}>
-              merry<h1 className="go">go</h1>
+              merry<div className="go">go</div>
             </h1>{" "}
           </NavLink>
           <div className="logoDiv">

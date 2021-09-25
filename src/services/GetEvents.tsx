@@ -15,30 +15,37 @@ const radius = "5000" || undefined;
 export default function getEvents(
   keyword?: any,
   name?: any,
-  dates?: any
+  dates?: any,
+  postalCode?: any
 ): Promise<Event[]> {
   return http
     .get("/events.json", {
       params: {
         apikey: key,
         keyword: keyword,
+        postalCode: "48226" || postalCode,
         name: name,
         date: dates,
-        venueId: undefined,
-        postalCode: "48226",
+        venueId: undefined, 
         radius: radius,
       },
     })
     .then((response) => response.data._embedded.events)
-    .catch(function (error) {
-      console.log("we have an error!");
-      document.location.href = "https://www.google.com"; // **ERROR CODE HERE**
-    });
+    // .catch(function (error) {
+    //   console.log("we have an error!");
+    //   document.location.href = "https://www.google.com"; // **ERROR CODE HERE**
+    // });
 }
 
-export function getByLocation(postalCode: any): Promise<any> {
+// export function getByLocation(postalCode: any): Promise<any> {
+//   return http
+//     .get(`/events.json?postalCode=${postalCode}&apikey=${key}`)
+//     .then((response) => response.data._embedded.events);
+// }
+
+export function getByLocation(latlong: any, keyword: any, startDateTime: any, endDateTime: any, page: any): Promise<any> {
   return http
-    .get(`/events.json?postalCode=${postalCode}&apikey=${key}`)
+    .get(`/events.json?keyword=${keyword}&latlong=${latlong}&radius=100&locale=*&startDateTime=${startDateTime}&endDateTime=${endDateTime}&apikey=${key}&page=${page}`)
     .then((response) => response.data._embedded.events);
 }
 

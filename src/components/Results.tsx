@@ -1,41 +1,39 @@
 import ResultRow from "../subcomponents/ResultRow";
-import { useState, useEffect } from "react";
-import getEvents, { getEvent } from "../services/GetEvents";
+import { useState, useEffect, useMemo } from "react";
+import getEvents, { getEvent, getByLocation } from "../services/GetEvents";
 import Event from "../models/Event";
 import Header from "./Header";
 import { useParams } from "react-router";
 
 interface RouteParams {
-    keyword: string;
+    keyword: string,
+    latlong: string,
+    startDateTime: string,
+    endDateTime: string,
+
 }
 
 export default function Results() {
     const [events, setEvents] = useState<Event[]>([]);
-    const { keyword } = useParams<RouteParams>();
+    // const[postalCode, setPostalCode] = useState();
+    // const[keyword, setKeyword] = useState();
+    const { keyword, latlong, startDateTime, endDateTime} = useParams<RouteParams>();
+    // if ((/\d{5}/).test(search)) {
+    //     console.log("zipcode is: ", search.match(/\d{5}/)![0]);
+    //     setPostalCode(search.match(/\d{5}/)![0])
+    // }
 
-    const [criteria, setCriteria] = useState<string>();
-
-
-
+    const[page, setPage] = useState(0);
 
     useEffect(() => {
-        getEvents(keyword).then((data) => { setEvents(data) })
-    }, [setEvents]);
+        getByLocation(latlong, keyword, startDateTime, endDateTime, page).then((data) => {
+            setEvents(data)
+        })
+    }, [setEvents, setPage]);
 
-    function searchCriteria(criteria: any) {
-
-        let criteriaArray = [...events];
-
-        return (
-            criteriaArray.filter(findEvent => findEvent == criteria)
-        )
-    }
-
+  
     return (
         <div className="resultsDiv">
-
-            {/* <input className="criteria" type="text" placeholder="keyword" onChange={(event) => { setCriteria(event.target.value) }} /> */}
-            {/* <button className="criteria" type="submit" onSubmit={searchCriteria(criteria)} >search</button> */}
 
             {events?.map((event, index) => {
                 return <ResultRow
@@ -47,7 +45,9 @@ export default function Results() {
 
 
             {/* Will load next 20 results when clicked */}
-            {/* <button >Load more results</button> */}
+            {/* <button onClick={() => {
+                const nextEvents = [...events]
+                setPage(prev => prev + 1)}}>Load more results</button> */}
 
 
 

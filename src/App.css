@@ -104,7 +104,7 @@ nav {
 }
 
 .card {
-  border-radius: 20% !important;
+  border-radius: 5% !important;
   background-color: #bf40af !important;
   height: 300px;
   margin-bottom: 50px;
@@ -160,6 +160,7 @@ button {
 }
 button:hover {
   background: #40b4bf;
+  color: #ee810f;
 }
 
 .cardUrl,
@@ -170,8 +171,8 @@ button:hover {
 
 .starDiv {
   display: flex;
-  justify-content: center !important;
-  margin-bottom: 50px;
+  justify-content: right !important;
+  padding: 10px 10px;
 }
 
 .fa-star:hover,
@@ -183,17 +184,17 @@ button:hover {
 .starDiv i {
   color: #ee810f;
 }
-.homeH1 {
-  margin-top: 100px;
+.homeH1 { 
   display: flex;
   font-family: "Fredoka One", cursive;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; 
+  margin-top: 100px;
 }
 
 .homeH1,
 .homeGo {
   font-size: 4rem;
+  
 }
 
 .eventDetailsDiv {
@@ -210,11 +211,12 @@ button:hover {
 .zipCodeInput {
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .searchBtn {
   width: 70px;
+  margin-top: 20px;
 }
 
 .resultsDiv {
@@ -242,7 +244,7 @@ button:hover {
   }
 
   .headerUl {
-    margin-right: 50px;
+    padding-right: 15px;
     font-size: 1.5rem;
     margin: 20px;
   }
