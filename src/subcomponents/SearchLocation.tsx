@@ -30,7 +30,8 @@ export default function SearchLocation() {
   return (
     <div className="search">
     {/* Label and input for keyword */}
-      <label htmlFor="keyword" className="zipCodeInput">
+    <span className="keywordZipSpan">
+      <label htmlFor="keyword" className="keywordInput">
         Enter a Keyword:
         <input required
           // setPostalCode(e.target.valueAsNumber);
@@ -61,8 +62,11 @@ export default function SearchLocation() {
                 }
                 }}/>
         </label>
+    </span>
+
+    <span className="startEndDateSpan">
     {/* Label and input for date which are formatted to ticketmaster's liking*/}
-        <label className="zipCodeInput">
+        <label className="startDateInput">
              Select start date:
             <input required type="date" onChange={(e) => {
                 console.log(e.target.value)
@@ -71,7 +75,7 @@ export default function SearchLocation() {
             }}
           />
         </label>
-        <label className="zipCodeInput">
+        <label className="endDateInput">
              Select end date:
             <input required type="date" onChange={(e) => {
                 const dateTime = e.target.value + "T00:00:00Z"
@@ -79,10 +83,12 @@ export default function SearchLocation() {
             }}
           />
         </label>
+    </span>
 
-      <button type="submit" onClick={handleClick} className="searchBtn">
+    <button type="submit" onClick={handleClick} className="searchBtn">
         search
       </button>
     </div>
+
   );
 }

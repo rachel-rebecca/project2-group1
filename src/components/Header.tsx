@@ -40,7 +40,7 @@ export default function Header() {
           <ul className="headerUl">
             <li className="headerLi" onClick={clickFavorites}>
               <NavLink to="/favorites">
-                <i className="fas fa-star"></i>
+                <i className="fas fa-star nav-star"></i>
                 favorites
               </NavLink>
             </li>

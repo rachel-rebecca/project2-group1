@@ -68,11 +68,11 @@ export default function ResultRow({
         <i className={"fa-star fa-2x far"}></i>
       </div>
       <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title onClick={handleClick} className="cardTitle">
-          <p>{name}</p>
+      <Card.Body className="cardBody">
+        < Card.Title onClick={handleClick} className="cardTitle">
+              <p>{name}</p>
+            <p className="cardDate">{formatDate()}</p> 
         </Card.Title>
-        <Card.Text className="cardDate">{formatDate()}</Card.Text>
         <button className="cardButton">
           <a href={url} className="cardUrl">
             Buy Tickets

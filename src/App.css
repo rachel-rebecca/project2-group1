@@ -28,7 +28,7 @@ header {
 nav {
   display: flex;
   background-color: white;
-  border-bottom: black solid 2px;
+  border-bottom:slategrey solid 5px;
   justify-content: space-around;
   align-items: center;
   height: 150px;
@@ -66,14 +66,15 @@ nav {
   }
 
   .fa-search,
-  .far-star {
-    padding-right: 2px;
+  .fa-star {
+    padding-right: 2px !important;
   }
+
+
+
 }
 
-.formDate {
-  margin-bottom: 50px;
-}
+
 
 /* ~~~~~~~~~~~~~~~~~~ MOBILE VIEW ~~~~~~~~~~~~~~~~~~~~ */
 
@@ -107,36 +108,46 @@ nav {
   border-radius: 5% !important;
   background-color: #bf40af !important;
   height: 300px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+}
+
+.cardBody {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .cardTitle:hover {
-  color: #ee810f;
+  color: #ee810f !important;
   cursor: pointer;
 }
 
 .cardTitle {
-  font-family: "Prompt", sans-serif;
-  display: flex;
-  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700 !important;
   font-size: large !important;
   color: lavender;
+  text-align: center !important;
+  margin-bottom: 2.5px !important;
 }
 
 .cardDate {
-  font-family: "Prompt", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  /* font-weight: 700; */
   font-size: large;
   color: lavender;
 }
 
 .cardButton,
 button {
-  font-family: "Prompt", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   border-radius: 5%;
-  background-color: #ee810f;
+  background-color: lavender;
+  padding: 5px;
 }
+/* #ee810f */
 
 a {
   text-decoration: none !important;
@@ -144,14 +155,13 @@ a {
 }
 
 a:hover {
-  color: #ee810f !important;
+  color: #bf40af !important;
 }
 
 button {
   border: none;
   padding: 10px;
   width: 200px;
-
   border-radius: 5% !important;
 }
 
@@ -160,13 +170,19 @@ button {
 }
 button:hover {
   background: #40b4bf;
-  color: #ee810f;
+  color: rgb(209, 209, 214);
 }
 
-.cardUrl,
-.searchBtn,
+
 .buyTickets {
   color: #40b4bf !important;
+}
+
+
+.searchBtn{
+  font-weight: 400;
+  font-size: 1rem;
+  color:#40b4bf;
 }
 
 .starDiv {
@@ -175,14 +191,18 @@ button:hover {
   padding: 10px 10px;
 }
 
-.fa-star:hover,
+.nav-star:hover,
 .fa-search:hover {
-  color: gold;
+  color: #bf40af;
   align-self: flex-end;
 }
 
 .starDiv i {
   color: #ee810f;
+}
+.starDiv:hover,
+.fa-2x:hover {
+  color: gold;
 }
 .homeH1 { 
   display: flex;
@@ -199,28 +219,61 @@ button:hover {
 
 .eventDetailsDiv {
   margin-top: 300px;
+  border: slategrey solid 2px;
+  font-family: "Montserrat", sans-serif;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.searchDiv {
+.EventName {
+  font-size: 2rem !important;
+  text-align: center;
+}
+
+.EventDate,
+.EventTime {
+  font-size: 1.25rem;
+}
+
+.Summary {
+  font-size: 1.25rem;
+}
+
+.search {
   font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.zipCodeInput {
+.keywordZipSpan, 
+.startEndDateSpan {
+  display: flex;
+  
+}
+
+.zipCodeInput, 
+.keywordInput,
+.startDateInput,
+.endDateInput {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin: 5px 5px;
+  width: 10rem;
 }
 
 .searchBtn {
   width: 70px;
+  height: 2rem;
+  padding: 0;
   margin-top: 20px;
 }
 
 .resultsDiv {
-  margin-top: 30rem;
+  margin-top: 25rem;
   height: 100vh;
 }
 
@@ -234,8 +287,15 @@ button:hover {
   nav {
     justify-content: space-between;
   }
+
+  .fa-search,
+  .fa-star {
+    padding-right: 5px
+  }
+
   .headerH1 {
-    margin-left: 50px;
+    margin-left: 20px;
+    margin-right: 45px;
   }
 
   .headerH1,
@@ -264,5 +324,10 @@ button:hover {
 
   .searchBtn {
     width: 125px;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    padding: 0;
   }
+
+ 
 }

@@ -108,18 +108,18 @@ export default function EventDetails() {
         }
 
   return (
-    <div className="container eventDetailsDiv">
+    <div className="eventDetailsDiv">
       <h2 className="EventName">
-        <strong>{eventName}</strong>
+           <strong> {eventName} </strong>
       </h2>
-      <h3>Venue: {venue}</h3>
-      <span className="EventDate">Date: {formatDate()}</span>
-      <span>Time: {formatTime()}</span>
+      <h3><strong>Venue:</strong> {venue}</h3>
+      <span className="EventDate"><strong>Date:</strong> {formatDate()}</span>
+      <span className="EventTime"><strong>Time:</strong> {formatTime()}</span>
 
       <details>
         <summary className="Summary"> More Info</summary>
         <p>
-          <strong>Note:</strong> {info}{" "}
+          <strong>Note:</strong> {info}
         </p>
         <p>
           <strong>Accessibility:</strong> {access}
