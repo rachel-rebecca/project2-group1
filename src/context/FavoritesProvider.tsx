@@ -31,14 +31,15 @@ export default function FavoritesProvider({children}: {children: ReactNode}) {
     
 
     function addToFaves(event: FaveEvent) {
-        if (favoritesList.length == 0) {
-           setFavoritesList([event])
+        // if (favoritesList.length == 0) {
+        //    setFavoritesList([event])
         
-        } else {
+        // } else {
             let newFavorites = [...favoritesList];
             newFavorites.push(event);
-            setFavoritesList(newFavorites)
-        }  
+            setFavoritesList(newFavorites);
+            console.log(favoritesList);
+        // }  
     }
 
     function remove(id?: any): void {

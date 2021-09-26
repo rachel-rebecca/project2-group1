@@ -12,10 +12,16 @@ export default function Homepage () {
     
    
     return (
-        <div >
+        <div className="homeSeacrhDiv">
 
 
-            <h1 className="homeH1 merry">merry<div className="go homeGo">go</div></h1>
+            <h1 className="homeH1 merry">search<div className="go homeGo">&go</div></h1>
+            <div className="searchGoDiv">
+            <p className="withP">with </p>
+            <p className="merryP"> merry </p>
+            <p className="goP">go.</p>
+            </div>
+            
 
             <SearchLocation />
            

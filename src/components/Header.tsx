@@ -7,6 +7,7 @@ import {
   Route,
 } from "react-router-dom";
 import { useHistory } from "react-router";
+import logo from "../images/PPGlogo.png"
 
 export default function Header() {
   const history = useHistory();
@@ -34,7 +35,7 @@ export default function Header() {
             </h1>{" "}
           </NavLink>
           <div className="logoDiv">
-            <img className="logo" src="PPGlogo.png"></img>
+            <img className="logo" src={logo}></img>
           </div>
 
           <ul className="headerUl">

@@ -44,9 +44,7 @@ export default function EventDetails() {
         setEventDate(data._embedded.events[0].dates.start.localDate);
         setEventTime(data._embedded.events[0].dates.start.localTime);
          if (
-          data._embedded.events[0].ticketing?.healthCheck?.description.length >
-          0
-        ) {
+          data._embedded.events[0].ticketing?.healthCheck?.description) {
           setHealthCheck(
             data._embedded.events[0].ticketing?.healthCheck?.description
           );
@@ -60,7 +58,7 @@ export default function EventDetails() {
             setInfo("None");
         }
 
-        if (data._embedded.events[0].accessibility?.info.length > 0) {
+        if (data._embedded.events[0].accessibility?.info) {
             setAccess(data._embedded.events[0].accessibility?.info);
         } else {
             setAccess("None listed");
@@ -154,7 +152,7 @@ export default function EventDetails() {
           {genre}
         </p>
       </details>
-      <button>
+      <button className="buyTicketsBtn">
         <a href={eventUrl} className="buyTickets">
           Buy Tickets
         </a>

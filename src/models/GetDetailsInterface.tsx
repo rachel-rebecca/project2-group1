@@ -108,7 +108,7 @@ export interface Seatmap {
 }
 export interface Accessibility {
   info: string;
-  ticketLimit?: number | null;
+  ticketLimit: number;
 }
 export interface TicketLimit {
   info: string;
