@@ -11,6 +11,7 @@ import EventDetails from './components/EventDetails';
 import Event from './models/Event';
 import { useState, useEffect } from "react";
 import getEvents from './services/GetEvents';
+import FavoritesProvider from './context/FavoritesProvider';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
 
 
   return (
+    <FavoritesProvider>
     <div className="App">
       <Router>
         {/* contains our NavLinks */}
@@ -68,6 +70,7 @@ function App() {
         </Switch>
       </Router>
     </div>
+    </FavoritesProvider>
   );
 }
 

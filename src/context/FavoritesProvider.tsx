@@ -1,13 +1,19 @@
 import React, { ReactNode, useState } from "react";
 import Event from "../models/Event";
-import GetDetailsInterface from "../models/GetDetailsInterface"
+import GetDetailsInterface from "../models/GetDetailsInterface";
 
 
+export interface FaveEvent {
+    name?: string;
+    url?: string;
+    date?: string;
+    id?: string;
+}
 
 interface FavoritesProps {
-    addToFaves: (event: Event) => void;
-    remove: (id: string) => void;
-    favoritesList: Event[];
+    addToFaves: (event: FaveEvent) => void;
+    remove: (id?: string) => void;
+    favoritesList: FaveEvent[];
 }
 
 const defaultValues: FavoritesProps = {
@@ -20,17 +26,24 @@ export const Favorites = React.createContext<FavoritesProps>(defaultValues)
 
 
 export default function FavoritesProvider({children}: {children: ReactNode}) {
-    const[favoritesList, setFavoritesList] = useState<Event[]>([]);
+    const[favoritesList, setFavoritesList] = useState<FaveEvent[]>([]);
+   
+    
 
-    function addToFaves(event: Event): void {
-        let newFavorites = [...favoritesList];
-        newFavorites.push(event);
-        setFavoritesList(newFavorites)
+    function addToFaves(event: FaveEvent) {
+        if (favoritesList.length == 0) {
+           setFavoritesList([event])
+        
+        } else {
+            let newFavorites = [...favoritesList];
+            newFavorites.push(event);
+            setFavoritesList(newFavorites)
+        }  
     }
 
-    function remove(id: string): void {
+    function remove(id?: any): void {
         let newFavorites = [...favoritesList];
-        let foundIndex = newFavorites.findIndex(event => event.id == id);
+        let foundIndex = newFavorites.findIndex(event => event.id === id);
         newFavorites.splice(foundIndex, 1)    
         setFavoritesList(newFavorites)
     }

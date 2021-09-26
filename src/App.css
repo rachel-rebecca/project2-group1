@@ -229,10 +229,10 @@ button:hover {
 
 .eventDetailsDiv {
   margin-top: 150px;
-  padding: 150px 5px;
+  padding: 500px 5px;
   font-family: "Montserrat", sans-serif;
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

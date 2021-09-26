@@ -16,7 +16,7 @@ export default function Header() {
   }
 
   function clickSearch() {
-    history.push("/search");
+    history.push("/");
   }
 
   function clickFavorites() {
