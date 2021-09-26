@@ -80,6 +80,12 @@ nav {
     padding-right: 2px !important;
   }
 
+  .fa-basketball-ball {
+    color: lavender !important;
+    height: 100px;
+    width: 100px;
+  }
+
 
 
 }
@@ -140,6 +146,11 @@ nav {
   color: lavender;
   text-align: center !important;
   margin-bottom: 2.5px !important;
+}
+
+.cardImage {
+  height: 100px !important;
+  width: 250px !important;
 }
 
 .cardDate {

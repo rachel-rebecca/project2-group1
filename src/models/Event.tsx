@@ -6,7 +6,7 @@ export default interface Event {
   test?: boolean;
   url?: string;
   locale?: string;
-  images?: (ImagesEntity)[] | null;
+  images?: (ImagesEntity)[];
   sales?: Sales;
   dates?: Dates;
   classifications?: (ClassificationsEntity)[] | null;

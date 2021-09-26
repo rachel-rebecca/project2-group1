@@ -8,6 +8,8 @@ import { getEvent } from "../services/GetEvents";
 import EventDetails from "../components/EventDetails";
 import { Favorites } from "../context/FavoritesProvider";
 import { FaveEvent } from "../context/FavoritesProvider";
+import sports from "../images/sports-500x500.png"
+import testImg from "../images/Untitled 28.png"
 
 export default function ResultRow({
   id,
@@ -80,7 +82,8 @@ export default function ResultRow({
       >
         <i className={"fa-star fa-2x far"}></i>
       </div>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      {/* <Card.Img variant="top" src={testImg} className="cardImage" /> */}
+      <i className="fas fa-basketball-ball"></i>
       <Card.Body className="cardBody">
         < Card.Title onClick={handleClick} className="cardTitle">
               <p>{name}</p>
