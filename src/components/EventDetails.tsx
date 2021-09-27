@@ -28,6 +28,7 @@ export default function EventDetails() {
   const [eventTime, setEventTime] = useState("");
   const [genre, setGenre] = useState("");
   const [venue, setVenue] = useState("");
+  const[image, setImage] = useState("");
   const { id } = useParams<Params>();
 
   useEffect(() => {
@@ -43,6 +44,7 @@ export default function EventDetails() {
         setEventUrl(data._embedded.events[0].url);
         setEventDate(data._embedded.events[0].dates.start.localDate);
         setEventTime(data._embedded.events[0].dates.start.localTime);
+        setImage(data._embedded.events[0].images[0].url)
          if (
           data._embedded.events[0].ticketing?.healthCheck?.description) {
           setHealthCheck(
@@ -128,6 +130,7 @@ export default function EventDetails() {
 
   return (
     <div className="eventDetailsDiv">
+        <img alt="event image of performers" src={image} className="eventDetailsImg"/>
       <h2 className="EventName">
            <strong> {eventName} </strong>
       </h2>

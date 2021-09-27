@@ -92,6 +92,10 @@ nav {
     
   }
 
+  .favoritesH1 {
+    font-family: "Montserrat", sans-serif;
+  }
+
 
 
 }
@@ -305,15 +309,22 @@ button:hover {
 }
 
 .eventDetailsDiv {
-  margin-top: 150px;
-  padding: 150px 5px;
+  margin-top: 0px;
+  padding: 150px 35px;
   font-family: "Montserrat", sans-serif;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+
+.eventDetailsImg {
+  margin-bottom: 20px;
+  height: 45%;
+  width: 50%;
+  border-radius: 5px;
 }
 
 .EventName {
@@ -323,6 +334,7 @@ button:hover {
 
 .eventVenue {
   padding-top: 20px;
+  text-align: center;
 }
 
 .EventDate,

@@ -2,8 +2,9 @@ import { FaveEvent, Favorites } from "../context/FavoritesProvider";
 import { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router";
 import { Card } from "react-bootstrap";
+import heart from "../images/Untitled 27.svg"
 
-export default function FavoriteRow({ name, url, date, id }: FaveEvent) {
+export default function FavoriteRow({ name, url, date, id}: FaveEvent) {
   // useContext import from FavoritesProvider
   const { addToFaves, remove, favoritesList } = useContext(Favorites);
   // set clicked to true for defualt.
@@ -60,10 +61,11 @@ export default function FavoriteRow({ name, url, date, id }: FaveEvent) {
       >
         <i className={"fa-star fa-2x far fas"}></i>
       </div>
-      {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+      <Card.Img variant="top" src={heart} className="cardImage"/>
       <Card.Body className="cardBody">
         <Card.Title onClick={handleClick} className="cardTitle">
           <p>{name}</p>
+        
           <p className="cardDate">{formatDate()}</p>
         </Card.Title>
         <button className="cardButton">

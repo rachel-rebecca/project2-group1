@@ -13,7 +13,7 @@ export interface EventsEntity {
   test: boolean;
   url: string;
   locale: string;
-  images?: ImagesEntity[] | null;
+  images: ImagesEntity[];
   sales: Sales;
   dates: Dates;
   classifications: ClassificationsEntity[];

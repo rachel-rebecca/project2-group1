@@ -30,12 +30,13 @@ export default function ResultRow({
   const history = useHistory();
   // importing children from the FavoritesProvider file 
   const { addToFaves, remove, favoritesList} = useContext(Favorites);
+  const [image, setImage] = useState(images[0].url)
   // making a state for one event to be added to favorites list
   const[saveEvent, setSaveEvent] =  useState<FaveEvent>({name: name, url: url, date: dates?.start.localDate, id: id});
   // boolean value for if star was clicked or not (favorited or not).
   const[clicked, setClicked] = useState("false")
  // function that routes use to details page using id value.
-    const [image, setImage] = useState(images[0].url)
+    
     
   function handleClick() {
     history.push(`/details/${id}`);
@@ -111,7 +112,7 @@ export default function ResultRow({
         }}
       > 
        {/* fa-2x  {name}*/}
-        <i className={"fa-star fa-1.5x far"}></i>
+        <i className={"fa-star far"}></i>
       </div>
       <Card.Img variant="top" src={image} className="cardImage" />
       <Card.Body className="cardBody">
