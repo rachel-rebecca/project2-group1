@@ -6,10 +6,10 @@ export default interface Event {
   test?: boolean;
   url?: string;
   locale?: string;
-  images?: (ImagesEntity)[];
+  images: ImagesEntity[];
   sales?: Sales;
   dates?: Dates;
-  classifications?: (ClassificationsEntity)[] | null;
+  classifications: ClassificationsEntity[];
   promoter?: PromotersEntityOrPromoter;
   promoters?: (PromotersEntityOrPromoter)[] | null;
   info?: string;

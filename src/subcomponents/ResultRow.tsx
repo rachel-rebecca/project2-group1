@@ -23,6 +23,8 @@ export default function ResultRow({
   _embedded,
   locale,
   type,
+  images
+
 }: Event) {
     // setting up the useHistory function which navigates user to single event details page.
   const history = useHistory();
@@ -33,6 +35,8 @@ export default function ResultRow({
   // boolean value for if star was clicked or not (favorited or not).
   const[clicked, setClicked] = useState("false")
  // function that routes use to details page using id value.
+    const [image, setImage] = useState(images[0].url)
+    
   function handleClick() {
     history.push(`/details/${id}`);
   }
@@ -66,6 +70,21 @@ export default function ResultRow({
     }
 
 
+    function cutOffTitle() {
+        let title = name
+        let titleArray = title?.split("")
+        if (titleArray) {
+            if (titleArray.length >= 35) {
+                titleArray = titleArray.slice(0, 35);
+                let titleString = titleArray.join("");
+                return titleString + "...";
+            } else {
+                return title;
+            }
+        } 
+    }
+
+
 
   return (    
     <Card className="card" style={{ width: "18rem" }}>
@@ -90,14 +109,16 @@ export default function ResultRow({
                 console.log(favoritesList)
             }
         }}
-      >
-        <i className={"fa-star fa-2x far"}></i>
+      > 
+       {/* fa-2x  {name}*/}
+        <i className={"fa-star fa-1.5x far"}></i>
       </div>
-      {/* <Card.Img variant="top" src= className="cardImage" /> */}
+      <Card.Img variant="top" src={image} className="cardImage" />
       <Card.Body className="cardBody">
         < Card.Title onClick={handleClick} className="cardTitle">
-              <p>{name}</p>
+              <p>{cutOffTitle()}</p>
             <p className="cardDate">{formatDate()}</p> 
+         
         </Card.Title>
         <button className="cardButton">
           <a href={url} className="cardUrl">

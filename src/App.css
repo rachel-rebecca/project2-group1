@@ -129,7 +129,7 @@ nav {
 .card {
   border-radius: 5% !important;
   background-color: #bf40af !important;
-  height: 300px;
+  height: 325px;
   margin-bottom: 10px;
 }
 
@@ -148,21 +148,24 @@ nav {
 .cardTitle {
   font-family: "Montserrat", sans-serif;
   font-weight: 700 !important;
-  font-size: large !important;
+  font-size: 1rem !important;
   color: lavender;
   text-align: center !important;
-  margin-bottom: 2.5px !important;
+  margin-bottom: 0px !important;
 }
 
 .cardImage {
-  height: 100px !important;
+  height: 120px !important;
   width: 250px !important;
+  align-self: center !important;
+  border-radius: 5px !important;
+  margin-top: 5px;
 }
 
 .cardDate {
   font-family: "Montserrat", sans-serif;
   /* font-weight: 700; */
-  font-size: large;
+  font-size: .75rem;
   color: lavender;
 }
 
@@ -235,7 +238,8 @@ button:hover {
 .starDiv {
   display: flex;
   justify-content: right !important;
-  padding: 10px 10px;
+  padding: 7px 7px;
+  font-size: 1.25rem
 }
 
 .nav-star:hover,
@@ -248,8 +252,9 @@ button:hover {
   color: #ee810f;
 }
 .starDiv:hover,
-.fa-2x:hover {
+.far:hover {
   color: gold;
+  cursor: pointer;
 }
 .homeH1 { 
   display: flex;

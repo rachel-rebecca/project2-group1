@@ -42,7 +42,7 @@ export default function Results() {
                     key={index} id={event.id} name={event.name}
                     url={event.url} dates={event.dates} classifications={event.classifications}
                     _embedded={event._embedded} locale={event.locale} info={event.info}
-                    pleaseNote={event.pleaseNote} />
+                    pleaseNote={event.pleaseNote} images={event.images}/>
             })}
 
 
