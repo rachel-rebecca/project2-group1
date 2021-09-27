@@ -481,5 +481,18 @@ details {
     
 
   }
+
+  .resultsDiv {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100vw;
+    margin-left: 10rem;
+    margin-right: auto;
+    align-self: center;
+  }
+
+  .card {
+    margin: 5px;
+  }
  
 }
