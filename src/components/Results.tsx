@@ -31,8 +31,8 @@ export default function Results() {
     useEffect(() => {
         getByLocation(latlong, keyword, startDateTime, endDateTime, page).then((data) => {
             setEvents(data);
-            setEvents(JSON.parse(localStorage.getItem("events")!))
-            localStorage.setItem('events', JSON.stringify(data))
+            // setEvents(JSON.parse(localStorage.getItem("events")!))
+            // localStorage.setItem('events', JSON.stringify(data))
 
         })
         

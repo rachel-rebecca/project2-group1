@@ -94,6 +94,7 @@ nav {
 
   .favoritesH1 {
     font-family: "Montserrat", sans-serif;
+    text-align: center;
   }
 
   
@@ -405,6 +406,11 @@ details {
   margin-top: 20px;
   background: #ee810f;
   color: lavender;
+}
+
+.favoritesH1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
 /* ~~~~~~ DESKTOP VIEW ~~~~~~~~~~ */
