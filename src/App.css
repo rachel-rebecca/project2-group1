@@ -96,6 +96,8 @@ nav {
     font-family: "Montserrat", sans-serif;
   }
 
+  
+
 
 
 }
@@ -387,6 +389,23 @@ details {
   
 }
 
+.redirectDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+
+.errorImg {
+  margin-left: 20%;
+}
+
+.homeBtn {
+  width: 100px;
+  margin-top: 20px;
+  background: #ee810f;
+  color: lavender;
+}
 
 /* ~~~~~~ DESKTOP VIEW ~~~~~~~~~~ */
 

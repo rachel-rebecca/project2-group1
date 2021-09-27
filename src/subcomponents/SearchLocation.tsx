@@ -17,9 +17,11 @@ export default function SearchLocation() {
   const history = useHistory();
 
   function handleClick() {
-    history.push(`/results/${keyword}/${latlong}/${startDateTime}/${endDateTime}`);
-   
-    
+    if(keyword == undefined && latlong == undefined && startDateTime == undefined && endDateTime == undefined) {
+        history.push("/error")
+    } else {
+        history.push(`/results/${keyword}/${latlong}/${startDateTime}/${endDateTime}`);
+    } 
   }
 
 //   useEffect(() => {

@@ -3,7 +3,7 @@ import './App.css';
 import Homepage from './components/Homepage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
-import { useParams, NavLink, Redirect, BrowserRouter as Router, Switch, Route, BrowserRouter } from "react-router-dom"
+import { useParams, NavLink, BrowserRouter as Router, Switch, Route, BrowserRouter } from "react-router-dom"
 import Favorites from './components/Favorites';
 import SearchCriteria from './subcomponents/SearchCriteria'
 import Results from './components/Results';
@@ -12,6 +12,7 @@ import Event from './models/Event';
 import { useState, useEffect } from "react";
 import getEvents from './services/GetEvents';
 import FavoritesProvider from './context/FavoritesProvider';
+import Redirect from './components/Redirect';
 
 
 function App() {
@@ -63,6 +64,10 @@ function App() {
           {/* Route to SearchCriteria */}
           <Route path="/search" exact>
             <SearchCriteria onSubmit={onSubmit} />
+          </Route>
+          {/* Route to Error page */}
+          <Route path="/error" exact>
+            <Redirect />
           </Route>
           {/* Route to Homepage */}
           <Route path="/" exact>

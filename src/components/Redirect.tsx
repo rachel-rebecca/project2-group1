@@ -12,9 +12,9 @@ export default function Redirect () {
 
 
     return (
-        <div>
-            <img alt="broken merry-go-round text says something got away from us" src={errorPic}/>
-            <button onClick={handleClick}>Return Home</button>
+        <div className="redirectDiv">
+            <img alt="broken merry-go-round text says something got away from us" src={errorPic} className="errorImg"/>
+            <button onClick={handleClick} className="homeBtn">Home</button>
         </div>
     )
 
