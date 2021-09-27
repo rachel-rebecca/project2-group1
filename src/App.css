@@ -80,11 +80,6 @@ nav {
     padding-right: 2px !important;
   }
 
-  .fa-basketball-ball {
-    color: lavender !important;
-    height: 100px;
-    width: 100px;
-  }
 
   .searchGoDiv {
     display: flex;
@@ -179,7 +174,13 @@ button {
   background-color: lavender;
   padding: 5px;
 }
-/* #ee810f */
+
+.hidden {
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+}
+
 
 a {
   text-decoration: none !important;

@@ -12,14 +12,14 @@ export interface FaveEvent {
 
 interface FavoritesProps {
     addToFaves: (event: FaveEvent) => void;
-    remove: (id?: string) => void;
+    remove: (list?: FaveEvent[]) => void;
     favoritesList: FaveEvent[];
 }
 
 const defaultValues: FavoritesProps = {
     addToFaves: () => {},
     remove: () => {},
-    favoritesList: [] 
+    favoritesList: []
 }
 
 export const Favorites = React.createContext<FavoritesProps>(defaultValues)
@@ -42,11 +42,11 @@ export default function FavoritesProvider({children}: {children: ReactNode}) {
         // }  
     }
 
-    function remove(id?: any): void {
-        let newFavorites = [...favoritesList];
-        let foundIndex = newFavorites.findIndex(event => event.id === id);
-        newFavorites.splice(foundIndex, 1)    
-        setFavoritesList(newFavorites)
+    function remove(list?: any): void {
+        // let newFavorites = [...favoritesList];
+        // let foundIndex = newFavorites.findIndex(event => event.id === id);
+        // newFavorites.splice(foundIndex, 1)    
+        setFavoritesList(list)
     }
 
     return <Favorites.Provider value={{addToFaves, remove, favoritesList}}>{children}</Favorites.Provider>

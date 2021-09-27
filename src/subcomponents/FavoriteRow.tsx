@@ -1,13 +1,22 @@
 import { FaveEvent, Favorites } from "../context/FavoritesProvider";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router";
 import { Card } from "react-bootstrap";
 
 export default function FavoriteRow({ name, url, date, id }: FaveEvent) {
   // useContext import from FavoritesProvider
   const { addToFaves, remove, favoritesList } = useContext(Favorites);
+  // set clicked to true for defualt.
+  const[clicked, setClicked] = useState(true);
 
-  const[ID, setID] = useState<any>();
+//   function usePersistedState(key: any, defaultValue: any) {
+//     const [clicked, setClicked] = useState(
+//        () => JSON.parse(localStorage.getItem(key)!) || defaultValue);
+//       useEffect(() => {
+//        localStorage.setItem(key, JSON.stringify(clicked));
+//       }, [key, clicked]);
+//   return [clicked, setClicked];
+// }
 
   const history = useHistory();
   // function that routes use to details page using id value.
@@ -34,20 +43,24 @@ export default function FavoriteRow({ name, url, date, id }: FaveEvent) {
   }
 
   return (
-    <Card className="card" style={{ width: "18rem" }}>
+    <Card className={clicked == false ? "hidden": "card"} style={{ width: "18rem" }}>
       <div
         className="starDiv"
         onClick={(event) => {
           event.preventDefault();
           const target = event.target as Element;
           target.classList.toggle("fas");
-          setID(id);
-          remove(ID);
+            
+                let foundIndex = favoritesList.findIndex(event => event.id == id);
+                favoritesList.splice(foundIndex, 1);
+                setClicked(false);
+                console.log(favoritesList);
+             
         }}
       >
-        <i className={"fa-star fa-2x far"}></i>
+        <i className={"fa-star fa-2x far fas"}></i>
       </div>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
       <Card.Body className="cardBody">
         <Card.Title onClick={handleClick} className="cardTitle">
           <p>{name}</p>

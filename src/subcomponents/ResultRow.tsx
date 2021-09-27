@@ -10,6 +10,7 @@ import { Favorites } from "../context/FavoritesProvider";
 import { FaveEvent } from "../context/FavoritesProvider";
 import sports from "../images/sports-500x500.png"
 import testImg from "../images/Untitled 28.png"
+import { convertCompilerOptionsFromJson } from "typescript";
 
 export default function ResultRow({
   id,
@@ -26,15 +27,26 @@ export default function ResultRow({
     // setting up the useHistory function which navigates user to single event details page.
   const history = useHistory();
   // importing children from the FavoritesProvider file 
-  const { addToFaves, remove, favoritesList } = useContext(Favorites);
+  const { addToFaves, remove, favoritesList} = useContext(Favorites);
+  // making a state for one event to be added to favorites list
   const[saveEvent, setSaveEvent] =  useState<FaveEvent>({name: name, url: url, date: dates?.start.localDate, id: id});
-  // state for ID to be in when use removes event from favoriteslist.
-  const[ID, setID] = useState<any>();
+  // boolean value for if star was clicked or not (favorited or not).
+  const[clicked, setClicked] = useState("false")
  // function that routes use to details page using id value.
   function handleClick() {
     history.push(`/details/${id}`);
   }
 
+//   useEffect(() => {
+//     setClicked(JSON.parse(localStorage.getItem("clicked")!));
+//     // localStorage.setItem('clicked', JSON.stringify(clicked));
+//   }, []);
+
+//   useEffect(() => {
+//     localStorage.setItem('clicked', JSON.stringify(clicked));
+//   }, [clicked]);
+
+  
   function formatDate(){
     let date = dates?.start.localDate;
     // convert date to an array
@@ -62,26 +74,21 @@ export default function ResultRow({
         onClick={(event) =>{
             event.preventDefault();
             const target = event.target as Element;
-            target.classList.toggle("fas");
-
-            // if(favoritesList.length == 0){
-                favoritesList.push(saveEvent)
+            // target.classList.toggle("fas");
+          
+            if(clicked == "false"){
+                favoritesList.push(saveEvent);
+                console.log(favoritesList);
+                target.classList.add("fas");
+                 // setting clicked to true after first click.
+                setClicked("true");
+            } else if (clicked == "true") {
+                let foundIndex = favoritesList.findIndex(event => event.id == id);
+                favoritesList.splice(foundIndex, 1);
+                target.classList.remove("fas");
+                setClicked("false");
                 console.log(favoritesList)
-            // }
-
-            // if()
-            // checking if classlist "fas" is true, which means the start icon is filled in.
-            // if (target.classList.contains("fas")) {
-                // setSaveEvent({name: name, url: url, date: dates?.start.localDate, id: id});
-                // addToFaves(saveEvent);
-                // log to check saveEvent and favoritesList
-                 console.log(saveEvent);
-                //  console.log(favoritesList);
-            // } else {
-            //     // setID(id);
-            //     remove(id);
-            //     console.log(favoritesList)
-            // } 
+            }
         }}
       >
         <i className={"fa-star fa-2x far"}></i>

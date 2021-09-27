@@ -3,7 +3,7 @@ import './App.css';
 import Homepage from './components/Homepage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
-import { useParams, NavLink, Redirect, BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { useParams, NavLink, Redirect, BrowserRouter as Router, Switch, Route, BrowserRouter } from "react-router-dom"
 import Favorites from './components/Favorites';
 import SearchCriteria from './subcomponents/SearchCriteria'
 import Results from './components/Results';
@@ -36,6 +36,7 @@ function App() {
 
 
   return (
+    <BrowserRouter>
     <FavoritesProvider>
     <div className="App">
       <Router>
@@ -71,6 +72,7 @@ function App() {
       </Router>
     </div>
     </FavoritesProvider>
+    </BrowserRouter>
   );
 }
 
