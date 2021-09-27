@@ -4,6 +4,7 @@ import getEvents, { getEvent, getByLocation } from "../services/GetEvents";
 import Event from "../models/Event";
 import Header from "./Header";
 import { useParams } from "react-router";
+import Redirect from "./Redirect"
 
 interface RouteParams {
     keyword: string,
@@ -25,18 +26,22 @@ export default function Results() {
 
     const[page, setPage] = useState(0);
 
+    
+
     useEffect(() => {
         getByLocation(latlong, keyword, startDateTime, endDateTime, page).then((data) => {
             setEvents(data);
-            setEvents(JSON.parse(localStorage.getItem("events")!));
-            localStorage.setItem('events', JSON.stringify(data));
+            setEvents(JSON.parse(localStorage.getItem("events")!))
+            localStorage.setItem('events', JSON.stringify(data))
+
         })
+        
     }, [setEvents, setPage]);
 
   
     return (
         <div className="resultsDiv">
-
+    
             {events?.map((event, index) => {
                 return <ResultRow
                     key={index} id={event.id} name={event.name}

@@ -1,5 +1,7 @@
 import Event from "../models/Event";
 import axios from "axios";
+import Redirect from "../components/Redirect";
+
 
 const key = `${process.env.REACT_APP_API_KEY}`;
 
@@ -46,7 +48,16 @@ export default function getEvents(
 export function getByLocation(latlong: any, keyword: any, startDateTime: any, endDateTime: any, page: any): Promise<any> {
   return http
     .get(`/events.json?keyword=${keyword}&latlong=${latlong}&radius=100&locale=*&startDateTime=${startDateTime}&endDateTime=${endDateTime}&apikey=${key}&page=${page}&sort=distance,asc`)
-    .then((response) => response.data._embedded.events);
+    .then((response) => response.data._embedded.events)
+     .catch(function (error) {
+      console.log("we have an error!");
+      if(error.response) {
+        <Redirect/>
+      } else if (error.request) {
+        <Redirect />
+      }
+    //   document.location.href = "https://www.google.com"; // **ERROR CODE HERE**
+    });
 }
 
 export function getEvent(id?: any): Promise<Event> {

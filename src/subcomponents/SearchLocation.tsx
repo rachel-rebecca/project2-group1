@@ -28,12 +28,14 @@ export default function SearchLocation() {
 
 
   return (
-    <div className="search">
+    <form className="search" noValidate 
+    onSubmit={(e) => {e.preventDefault();
+    }}>
     {/* Label and input for keyword */}
     <span className="keywordZipSpan">
       <label htmlFor="keyword" className="keywordInput">
         Enter a Keyword:
-        <input required
+        <input 
           // setPostalCode(e.target.valueAsNumber);
           onChange={(e) => {
               setKeyword(e.target.value)
@@ -46,12 +48,12 @@ export default function SearchLocation() {
             // }
           }}
           type="text"
-       />
+          required />
       </label>
     {/* Label and input for zipcode which is converted to latitude and longitude  */}
         <label htmlFor="zipcode" className="zipCodeInput">
           Enter your zipcode:
-          <input required onChange={(e) => {
+          <input  min="00601" max={83802} onChange={(e) => {
                 if(e.target.value.length == 5) {
                     LongLat.forEach(array => {
                         if(array[0] == e.target.value) {
@@ -60,7 +62,7 @@ export default function SearchLocation() {
                         }
                     })
                 }
-                }}/>
+                }} required/>
         </label>
     </span>
 
@@ -68,27 +70,27 @@ export default function SearchLocation() {
     {/* Label and input for date which are formatted to ticketmaster's liking*/}
         <label className="startDateInput">
              Select start date:
-            <input required type="date" onChange={(e) => {
+            <input type="date" onChange={(e) => {
                 console.log(e.target.value)
                 const dateTime = e.target.value + "T00:00:00Z"
               setStartDateTime(dateTime);
             }}
-          />
+            required />
         </label>
         <label className="endDateInput">
              Select end date:
-            <input required type="date" onChange={(e) => {
+            <input type="date" onChange={(e) => {
                 const dateTime = e.target.value + "T00:00:00Z"
               setEndDateTime(dateTime);
             }}
-          />
+            required />
         </label>
     </span>
 
     <button type="submit" onClick={handleClick} className="searchBtn">
         search
       </button>
-    </div>
+    </form>
 
   );
 }
