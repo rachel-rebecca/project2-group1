@@ -95,6 +95,7 @@ nav {
   .favoritesH1 {
     font-family: "Montserrat", sans-serif;
     text-align: center;
+    margin-top: 500px !important;
   }
 
   
@@ -411,6 +412,7 @@ details {
 .favoritesH1 {
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  margin-top: 500px;
 }
 
 /* ~~~~~~ DESKTOP VIEW ~~~~~~~~~~ */
@@ -497,6 +499,12 @@ details {
 
   .card {
     margin: 5px;
+  }
+
+  .favoritesH1 {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-top: 500px !important;
   }
  
 }

@@ -15,7 +15,9 @@ export default function Homepage () {
         <div className="homeSeacrhDiv">
 
 
-            <h1 className="homeH1 merry">search<div className="go homeGo">&go</div></h1>
+            <h1 className="homeH1 merry">search
+            <div className="and">&</div>
+            <div className="go homeGo">go</div></h1>
             <div className="searchGoDiv">
             <p className="withP">with </p>
             <p className="merryP"> merry </p>

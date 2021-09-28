@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import { useParams, NavLink, BrowserRouter as Router, Switch, Route, BrowserRouter } from "react-router-dom"
 import Favorites from './components/Favorites';
-import SearchCriteria from './subcomponents/SearchCriteria'
 import Results from './components/Results';
 import EventDetails from './components/EventDetails';
 import Event from './models/Event';
@@ -61,10 +60,7 @@ function App() {
           {/* <Route path="/results" exact>
             <Results />
           </Route> */}
-          {/* Route to SearchCriteria */}
-          <Route path="/search" exact>
-            <SearchCriteria onSubmit={onSubmit} />
-          </Route>
+     
           {/* Route to Error page */}
           <Route path="/error" exact>
             <Redirect />

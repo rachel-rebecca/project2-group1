@@ -38,6 +38,8 @@ export default function SearchLocation() {
       <label htmlFor="keyword" className="keywordInput">
         Enter a Keyword:
         <input 
+        role="textbox"
+        aria-label="keywordInput"
           // setPostalCode(e.target.valueAsNumber);
           onChange={(e) => {
               setKeyword(e.target.value)
