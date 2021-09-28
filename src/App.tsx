@@ -57,10 +57,10 @@ function App() {
             <Results/>
           </Route>
           {/* Route to Results */}
-          {/* <Route path="/results" exact>
+          <Route path="/results" exact>
             <Results />
-          </Route> */}
-     
+          </Route> 
+    
           {/* Route to Error page */}
           <Route path="/error" exact>
             <Redirect />

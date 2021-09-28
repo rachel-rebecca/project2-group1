@@ -10,16 +10,26 @@ export interface FaveEvent {
     id?: string;
 }
 
+export interface SearchCriteria {
+    keyword?: any;
+    latlong?: any;
+    startDateTime?: any;
+    endDateTime?: any; 
+}
+
+
 interface FavoritesProps {
     addToFaves: (event: FaveEvent) => void;
     remove: (list?: FaveEvent[]) => void;
     favoritesList: FaveEvent[];
+    searchCriteria: SearchCriteria[];
 }
 
 const defaultValues: FavoritesProps = {
     addToFaves: () => {},
     remove: () => {},
-    favoritesList: []
+    favoritesList: [],
+    searchCriteria: [],
 }
 
 export const Favorites = React.createContext<FavoritesProps>(defaultValues)
@@ -27,7 +37,7 @@ export const Favorites = React.createContext<FavoritesProps>(defaultValues)
 
 export default function FavoritesProvider({children}: {children: ReactNode}) {
     const[favoritesList, setFavoritesList] = useState<FaveEvent[]>([]);
-   
+    let[searchCriteria, setSearchCriteria] = useState<SearchCriteria[]>([])
     
 
     function addToFaves(event: FaveEvent) {
@@ -49,6 +59,6 @@ export default function FavoritesProvider({children}: {children: ReactNode}) {
         setFavoritesList(list)
     }
 
-    return <Favorites.Provider value={{addToFaves, remove, favoritesList}}>{children}</Favorites.Provider>
+    return <Favorites.Provider value={{addToFaves, remove, favoritesList, searchCriteria}}>{children}</Favorites.Provider>
 
 }

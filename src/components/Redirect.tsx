@@ -14,6 +14,7 @@ export default function Redirect () {
     return (
         <div className="redirectDiv">
             <img alt="broken merry-go-round text says something got away from us" src={errorPic} className="errorImg"/>
+            <p>Please fill out every search criteria.</p>
             <button onClick={handleClick} className="homeBtn">Home</button>
         </div>
     )

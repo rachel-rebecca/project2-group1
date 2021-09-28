@@ -113,6 +113,11 @@ nav {
   margin-top: 2px;
   height: 200px;
 }
+
+.logo:hover {
+  cursor: pointer;
+}
+
 .headerH1 {
   margin-left: 10px;
   height: 100px;
@@ -137,7 +142,7 @@ nav {
 .card {
   border-radius: 5% !important;
   background-color: #bf40af !important;
-  height: 325px;
+  height: 315px;
   margin-bottom: 10px;
 }
 
@@ -493,12 +498,19 @@ details {
     flex-wrap: wrap; 
     width: 100vw;
     margin-left: 10rem;
-    margin-right: auto;
+    margin-right: 10rem;
     align-self: center;
+    box-sizing: content-box;
+    align-items: center;
+    justify-content: center;
   }
 
   .card {
-    margin: 5px;
+    width: calc(15% - 10px);
+    height: calc(325px - 10px);
+    margin: 0px 10px 20px 10px;
+    box-sizing: border-box;
+   
   }
 
   .favoritesH1 {

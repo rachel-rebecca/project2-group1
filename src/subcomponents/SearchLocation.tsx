@@ -1,23 +1,21 @@
 import { useHistory } from "react-router";
-// import {getByLocation} from "../services/GetEvents"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Event from "../models/Event";
 import { LongLat } from "../models/LongLat";
-import getEvents from "../services/GetEvents";
-import Results from "../components/Results";
-import { useParams, NavLink, Redirect, BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { SearchCriteria, Favorites} from "../context/FavoritesProvider";
+
 
 export default function SearchLocation() {
-  const [events, setEvents] = useState<Event[]>([]);
-  const [postalCode, setPostalCode] = useState<any>();
+  const { searchCriteria } = useContext(Favorites);
   const [keyword, setKeyword] = useState<any>();
   const [latlong, setLatlong] = useState<any>();
   const [startDateTime, setStartDateTime] = useState<any>();
   const [endDateTime, setEndDateTime] = useState<any>();
+//   const [searchCriteria, setSearchCriteria] = useState<SearchCriteria>({keyword: keyword, latlong: latlong, startDateTime: startDateTime, endDateTime: endDateTime})
   const history = useHistory();
 
   function handleClick() {
-    if(keyword == undefined && latlong == undefined && startDateTime == undefined && endDateTime == undefined) {
+    if(latlong == undefined || startDateTime == undefined || endDateTime == undefined) {
         history.push("/error")
     } else {
         history.push(`/results/${keyword}/${latlong}/${startDateTime}/${endDateTime}`);
@@ -30,8 +28,9 @@ export default function SearchLocation() {
 
 
   return (
-    <form className="search" noValidate 
+    <form className="search" 
     onSubmit={(e) => {e.preventDefault();
+    searchCriteria.unshift({keyword: keyword, latlong: latlong, startDateTime: startDateTime, endDateTime: endDateTime});
     }}>
     {/* Label and input for keyword */}
     <span className="keywordZipSpan">
