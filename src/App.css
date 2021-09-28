@@ -464,6 +464,10 @@ details {
     margin-right: 8px;
   }
 
+  .and {
+    color: #40b4bf;
+  }
+
   .searchDiv {
     font-size: 1.5rem;
   }
