@@ -28,7 +28,6 @@ export default function FavoritesPage () {
 
     return (
         <div>
-              {/* <h1 className="favoritesH1"> Favorites </h1> */}
                 <div className="resultsDiv">
             
                     {favoritesList.map((event, index) => {

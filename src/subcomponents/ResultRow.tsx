@@ -17,12 +17,6 @@ export default function ResultRow({
   name,
   url,
   dates,
-  classifications,
-  info,
-  pleaseNote,
-  _embedded,
-  locale,
-  type,
   images
 
 }: Event) {

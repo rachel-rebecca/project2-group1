@@ -57,7 +57,10 @@ export default function SearchLocation() {
     {/* Label and input for zipcode which is converted to latitude and longitude  */}
         <label htmlFor="zipcode" className="zipCodeInput">
           Enter your zipcode:
-          <input  min="00601" max={83802} onChange={(e) => {
+          <input 
+          role="textbox" 
+          aria-label="postalCodeInput" 
+          min="00601" max={83802} onChange={(e) => {
                 if(e.target.value.length == 5) {
                     LongLat.forEach(array => {
                         if(array[0] == e.target.value) {
@@ -74,7 +77,10 @@ export default function SearchLocation() {
     {/* Label and input for date which are formatted to ticketmaster's liking*/}
         <label className="startDateInput">
              Select start date:
-            <input type="date" onChange={(e) => {
+            <input 
+            role="dateInput"
+            aria-label="startDate"
+            type="date" onChange={(e) => {
                 console.log(e.target.value)
                 const dateTime = e.target.value + "T00:00:00Z"
               setStartDateTime(dateTime);
@@ -83,7 +89,10 @@ export default function SearchLocation() {
         </label>
         <label className="endDateInput">
              Select end date:
-            <input type="date" onChange={(e) => {
+            <input 
+            role="dateInput"
+            aria-label="endDate"
+            type="date" onChange={(e) => {
                 const dateTime = e.target.value + "T00:00:00Z"
               setEndDateTime(dateTime);
             }}
@@ -91,7 +100,10 @@ export default function SearchLocation() {
         </label>
     </span>
 
-    <button type="submit" onClick={handleClick} className="searchBtn">
+    <button 
+    role="button"
+    aria-label="onSubmit"
+    type="submit" onClick={handleClick} className="searchBtn">
         search
       </button>
     </form>
