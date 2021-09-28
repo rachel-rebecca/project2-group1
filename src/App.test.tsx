@@ -32,13 +32,18 @@ test("End Date Input is on the page", () => {
 });
 
 
-// test("Search button works", () => {
-//   const spy = jest.fn();
-// 	render(<SearchLocation />);
-// 	const button = screen.getByRole("button", {name: "onSubmit"});
-//   fireEvent.click(button)
-// 	expect(spy).toHaveBeenCalled();
-// });
+test("Keyword input value changes", () => {
+	render(<SearchLocation />);
+  const keywordElement = screen.getByRole("textbox", {name: "keywordInput"});
+  fireEvent.change(keywordElement, {target: {value: "music"}})
+
+});
+
+test("Postal code input value changes", () => {
+	render(<SearchLocation />);
+  const postalCodeElement = screen.getByRole("textbox", {name: "postalCodeInput"});
+  fireEvent.change(postalCodeElement, {target: {value: "48226"}})
+});
 
 
 // can add two more tests using fireEvent.change to test keyword input and postal code.
