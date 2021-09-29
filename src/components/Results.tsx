@@ -1,10 +1,9 @@
 import ResultRow from "../subcomponents/ResultRow";
 import { useState, useEffect, useMemo } from "react";
-import getEvents, { getEvent, getByLocation } from "../services/GetEvents";
+import { getByLocation } from "../services/GetEvents";
 import Event from "../models/Event";
-import Header from "./Header";
 import { useParams } from "react-router";
-import Redirect from "./Redirect";
+
 
 interface RouteParams {
   keyword: string;
@@ -75,17 +74,3 @@ export default function Results() {
   );
 }
 
-// useEffect(() => {
-//     // if (postalCode) {
-//     //     // events2 = events2.filter((event) => event._embedded == postalCode)
-//     //     // setEvents(events2)
-//     //     console.log(events2)
-//     // }
-//     getEvents().then((data) => { setEvents(data) })
-// }, []);
-
-// let events2 = [...events];
-
-// useEffect(() => {
-//     getByLocation(postalCode).then((events) => { setEvents(events) })
-// }, [setEvents]);

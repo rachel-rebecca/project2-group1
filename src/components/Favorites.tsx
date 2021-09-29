@@ -27,7 +27,7 @@ export default function FavoritesPage () {
     // }
 
     return (
-        // <div>
+       
                 <div className="resultsDiv">
             
                     {favoritesList.map((event, index) => {
@@ -35,14 +35,5 @@ export default function FavoritesPage () {
                     })}
             
                  </div>
-        // </div>
-        // <h1 className="favoritesH1"> Favorites </h1>
-        // <div className="resultsDiv">
-            
-        //     {favoritesList.map((event, index) => {
-        //        return <FavoriteRow key={index} name={event.name} url={event.url} id={event.id} date={event.date}/>
-        //     })}
-            
-        // </div>
     )
 }

@@ -10,14 +10,6 @@ export default function FavoriteRow({ name, url, date, id}: FaveEvent) {
   // set clicked to true for defualt.
   const[clicked, setClicked] = useState(true);
 
-//   function usePersistedState(key: any, defaultValue: any) {
-//     const [clicked, setClicked] = useState(
-//        () => JSON.parse(localStorage.getItem(key)!) || defaultValue);
-//       useEffect(() => {
-//        localStorage.setItem(key, JSON.stringify(clicked));
-//       }, [key, clicked]);
-//   return [clicked, setClicked];
-// }
 
   const history = useHistory();
   // function that routes use to details page using id value.
@@ -61,7 +53,7 @@ export default function FavoriteRow({ name, url, date, id}: FaveEvent) {
       >
         <i className={"fa-star fa-2x far fas"}></i>
       </div>
-      <Card.Img variant="top" src={heart} className="cardImage"/>
+      <Card.Img variant="top" src={heart} className="favsCardImage"/>
       <Card.Body className="cardBody">
         <Card.Title onClick={handleClick} className="cardTitle">
           <p>{name}</p>

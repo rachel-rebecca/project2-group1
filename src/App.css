@@ -175,6 +175,14 @@ nav {
   margin-top: 5px;
 }
 
+.favsCardImage {
+  height: 80px !important;
+  width: 200px !important;
+  align-self: center !important;
+  border-radius: 5px !important;
+  margin-top: 5px;
+}
+
 .cardDate {
   font-family: "Montserrat", sans-serif;
   /* font-weight: 700; */
@@ -301,7 +309,7 @@ button:hover {
   
 }
 
-.merryP, .goP, .withP {
+.merryP, .goP, .withP, .findEventsP {
   font-family: "Fredoka One", cursive;
   font-size: .7rem;
 }
@@ -320,6 +328,10 @@ button:hover {
 
 .and {
   color: #40b4bf;
+}
+
+.findEventsP{
+  color:#ee810f;
 }
 
 .eventDetailsDiv {
@@ -482,13 +494,17 @@ details {
     padding-right: 5vw;
   }
 
-  .withP, .merryP, .goP {
+  .withP, .merryP, .goP, .findEventsP {
     font-size: 1.15rem;
   }
 
   .withP {
     margin-right: 8px;
-    margin-left: 10vw;
+    margin-left: 5px;
+  }
+
+  .findEventsP {
+    margin-left: 8vw;
   }
 
   .and {

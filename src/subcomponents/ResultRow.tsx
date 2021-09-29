@@ -1,16 +1,11 @@
 import Event from "../models/Event";
-import Results from "../components/Results";
 import { Card } from "react-bootstrap";
 import { Dates } from "../models/Event";
-import { useState, useEffect, useContext, Fragment } from "react";
+import { useState, useContext} from "react";
 import { useHistory } from "react-router";
-import { getEvent } from "../services/GetEvents";
-import EventDetails from "../components/EventDetails";
 import { Favorites } from "../context/FavoritesProvider";
 import { FaveEvent } from "../context/FavoritesProvider";
-import sports from "../images/sports-500x500.png"
-import testImg from "../images/Untitled 28.png"
-import { convertCompilerOptionsFromJson } from "typescript";
+
 
 export default function ResultRow({
   id,
@@ -36,14 +31,6 @@ export default function ResultRow({
     history.push(`/details/${id}`);
   }
 
-//   useEffect(() => {
-//     setClicked(JSON.parse(localStorage.getItem("clicked")!));
-//     // localStorage.setItem('clicked', JSON.stringify(clicked));
-//   }, []);
-
-//   useEffect(() => {
-//     localStorage.setItem('clicked', JSON.stringify(clicked));
-//   }, [clicked]);
 
   
   function formatDate(){

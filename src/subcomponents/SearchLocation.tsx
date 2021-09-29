@@ -1,9 +1,8 @@
 import { useHistory } from "react-router";
-import { useEffect, useState, useContext } from "react";
-import Event from "../models/Event";
+import { useState, useContext } from "react";
 import { LongLat } from "../models/LongLat";
-import { SearchCriteria, Favorites} from "../context/FavoritesProvider";
-import { ToastBody } from "react-bootstrap";
+import {  Favorites} from "../context/FavoritesProvider";
+
 
 
 export default function SearchLocation() {
@@ -12,7 +11,6 @@ export default function SearchLocation() {
   const [latlong, setLatlong] = useState<any>();
   const [startDateTime, setStartDateTime] = useState<any>();
   const [endDateTime, setEndDateTime] = useState<any>();
-//   const [searchCriteria, setSearchCriteria] = useState<SearchCriteria>({keyword: keyword, latlong: latlong, startDateTime: startDateTime, endDateTime: endDateTime})
   const history = useHistory();
 
   function handleClick() {
@@ -23,9 +21,6 @@ export default function SearchLocation() {
     } 
   }
 
-//   useEffect(() => {
-//     getEvents(keyword).then((data) => { setEvents(data) })
-// }, [setEvents]);
 
 
   return (
@@ -36,7 +31,7 @@ export default function SearchLocation() {
     {/* Label and input for keyword */}
     <span className="keywordZipSpan">
       <label htmlFor="keyword" className="keywordInput">
-        Enter a Keyword:
+        Enter a keyword:
         <input 
         role="textbox"
         aria-label="keywordInput"

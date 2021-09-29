@@ -19,7 +19,8 @@ export default function Homepage () {
             <div className="and">&</div>
             <div className="go homeGo">go</div></h1>
             <div className="searchGoDiv">
-            <p className="withP">find events with </p>
+            <p className="findEventsP">find events</p>
+            <p className="withP"> with </p>
             <p className="merryP"> merry </p>
             <p className="goP">go.</p>
             </div>

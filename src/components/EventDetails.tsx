@@ -77,10 +77,7 @@ export default function EventDetails() {
         } else {
             setVenue("None listed");
         }
-        
-        
-        // setGenre(data._embedded.events[0].classifications[0].genre.name);
-        // setVenue(data._embedded.events[0]._embedded.venues[0].name);
+
         if (
           data._embedded.events[0].ticketing?.healthCheck?.description
         ) {
@@ -140,6 +137,7 @@ export default function EventDetails() {
         return timeValue
         }
 
+
   return (
     <div className="eventDetailsDiv">
         <img alt="event image of performers" src={image} className="eventDetailsImg"/>
@@ -174,7 +172,3 @@ export default function EventDetails() {
     </div>
   );
 }
-
-// export default function EventDetails() {
-//   return getDetails();
-// }
