@@ -1,6 +1,5 @@
 import Event from "../models/Event";
 import { Card } from "react-bootstrap";
-import { Dates } from "../models/Event";
 import { useState, useContext} from "react";
 import { useHistory } from "react-router";
 import { Favorites } from "../context/FavoritesProvider";

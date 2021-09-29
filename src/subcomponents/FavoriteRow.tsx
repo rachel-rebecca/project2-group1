@@ -1,5 +1,5 @@
 import { FaveEvent, Favorites } from "../context/FavoritesProvider";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext} from "react";
 import { useHistory } from "react-router";
 import { Card } from "react-bootstrap";
 import heart from "../images/Untitled 27.svg"

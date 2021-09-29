@@ -1,6 +1,6 @@
 import Event from "../models/Event";
 import axios from "axios";
-import Redirect from "../components/Redirect";
+
 
 
 const key = `${process.env.REACT_APP_API_KEY}`;

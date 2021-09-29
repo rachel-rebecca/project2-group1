@@ -1,6 +1,5 @@
 import React, { ReactNode, useState } from "react";
-import Event from "../models/Event";
-import GetDetailsInterface from "../models/GetDetailsInterface";
+
 
 
 export interface FaveEvent {

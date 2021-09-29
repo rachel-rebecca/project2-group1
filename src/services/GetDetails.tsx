@@ -1,6 +1,4 @@
 import axios from "axios";
-import { start } from "repl";
-import Event from "../models/Event";
 import GetDetailsInterface from "../models/GetDetailsInterface";
 import Redirect from "../components/Redirect";
 
