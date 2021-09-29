@@ -14,7 +14,7 @@ export default function SearchLocation() {
   const history = useHistory();
 
   function handleClick() {
-    if(latlong == undefined || startDateTime == undefined || endDateTime == undefined) {
+    if(keyword == "" || latlong == undefined || startDateTime == undefined || endDateTime == undefined) {
         history.push("/error")
     } else {
         history.push(`/results/${keyword}/${latlong}/${startDateTime}/${endDateTime}`);
