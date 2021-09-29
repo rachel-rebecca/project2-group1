@@ -11,6 +11,7 @@ import GetDetailsInterface from "../models/GetDetailsInterface";
 import { start } from "repl";
 import { Link } from "react-router-dom";
 import "../App.css";
+import heart from "../images/Untitled 27.svg"
 
 interface Params {
   id: any;
@@ -40,11 +41,41 @@ export default function EventDetails() {
         data._embedded.events[0]
       ) {
         console.log(data._embedded.events[0]);
-        setEventName(data._embedded.events[0].name);
-        setEventUrl(data._embedded.events[0].url);
-        setEventDate(data._embedded.events[0].dates.start.localDate);
-        setEventTime(data._embedded.events[0].dates.start.localTime);
-        setImage(data._embedded.events[0].images[0].url)
+
+        if (data._embedded.events[0].name) {
+          setEventName(data._embedded.events[0].name);
+        } else {
+          setEventName("Not listed.");
+        }
+
+      
+        if (data._embedded.events[0].url) {
+          setEventUrl(data._embedded.events[0].url);
+        } else {
+          setEventUrl("Not listed.");
+        }
+
+        if (data._embedded.events[0].dates.start.localDate) {
+          setEventDate(data._embedded.events[0].dates.start.localDate);
+        } else {
+          setEventDate("Not listed.");
+        }
+        
+
+        if (data._embedded.events[0].dates.start.localTime) {
+          setEventTime(data._embedded.events[0].dates.start.localTime);
+        } else {
+          setEventTime("Not listed.");
+        }
+
+
+
+        if (data._embedded.events[0].images[0].url) {
+          setImage(data._embedded.events[0].images[0].url)
+        } else {
+          setImage(heart);
+        }
+        
          if (
           data._embedded.events[0].ticketing?.healthCheck?.description) {
           setHealthCheck(
