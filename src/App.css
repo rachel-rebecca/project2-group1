@@ -420,6 +420,18 @@ details {
   margin-top: 500px;
 }
 
+.loadMoreDiv{
+  width: 42vw;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.loadMoreBtn{
+  background: #ee810f;
+  color: lavender;
+}
+
 /* ~~~~~~ DESKTOP VIEW ~~~~~~~~~~ */
 
 @media only screen and (min-width: 700px) {
@@ -517,6 +529,10 @@ details {
     font-family: "Montserrat", sans-serif;
     text-align: center;
     margin-top: 500px !important;
+  }
+
+  .loadMoreDiv{
+    width: 80vw;
   }
  
 }
