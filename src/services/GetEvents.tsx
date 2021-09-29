@@ -51,11 +51,11 @@ export function getByLocation(latlong: any, keyword: any, startDateTime: any, en
     .then((response) => response.data._embedded.events)
      .catch(function (error) {
       console.log("we have an error!");
-      if(error.response) {
+    //   if(error.response) {
         <Redirect/>
-      } else if (error.request) {
-        <Redirect />
-      }
+    //   } else if (error.request) {
+    //     <Redirect />
+    //   }
     //   document.location.href = "https://www.google.com"; // **ERROR CODE HERE**
     });
 }

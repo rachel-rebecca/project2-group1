@@ -83,10 +83,10 @@ nav {
 
   .searchGoDiv {
     display: flex;
-    width: 60vw;
+    width: 70vw;
     justify-content: center;
     align-items: center;
-    padding-left: 200px;
+    padding-left: 50px;
     padding-right: 0px;
     /* margin-bottom: 5px; */
     
@@ -295,14 +295,15 @@ button:hover {
   width: 60vw;
   justify-content: center;
   align-items: center;
-  padding-left: 30vw; 
+  padding-left: 20vw; 
   margin-bottom: 5px;
+  padding-right: 0px;
   
 }
 
 .merryP, .goP, .withP {
   font-family: "Fredoka One", cursive;
-  font-size: 1rem;
+  font-size: .7rem;
 }
 
 .merryP {
@@ -315,6 +316,10 @@ button:hover {
 
 .withP {
   margin-right: 4px;
+}
+
+.and {
+  color: #40b4bf;
 }
 
 .eventDetailsDiv {
@@ -405,11 +410,13 @@ details {
 
 .errorImg {
   margin-left: 20%;
+  height: 300px;
+  width: 400px;
 }
 
 .homeBtn {
   width: 100px;
-  margin-top: 20px;
+  margin-top: 10px;
   background: #ee810f;
   color: lavender;
 }
@@ -471,8 +478,8 @@ details {
   }
 
   .searchGoDiv {
-    padding-left: 25vw;
-    padding-right: 10vw;
+    padding-left: 12vw;
+    padding-right: 5vw;
   }
 
   .withP, .merryP, .goP {
@@ -481,6 +488,7 @@ details {
 
   .withP {
     margin-right: 8px;
+    margin-left: 10vw;
   }
 
   .and {

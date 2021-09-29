@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import Event from "../models/Event";
 import { LongLat } from "../models/LongLat";
 import { SearchCriteria, Favorites} from "../context/FavoritesProvider";
+import { ToastBody } from "react-bootstrap";
 
 
 export default function SearchLocation() {
@@ -39,6 +40,7 @@ export default function SearchLocation() {
         <input 
         role="textbox"
         aria-label="keywordInput"
+        placeholder="event, artist, etc."
           // setPostalCode(e.target.valueAsNumber);
           onChange={(e) => {
               setKeyword(e.target.value)
@@ -55,10 +57,11 @@ export default function SearchLocation() {
       </label>
     {/* Label and input for zipcode which is converted to latitude and longitude  */}
         <label htmlFor="zipcode" className="zipCodeInput">
-          Enter your zipcode:
+          Enter zipcode:
           <input 
           role="textbox" 
           aria-label="postalCodeInput" 
+          placeholder="event zipcode"
           min="00601" max={83802} onChange={(e) => {
                 if(e.target.value.length == 5) {
                     LongLat.forEach(array => {
@@ -79,6 +82,8 @@ export default function SearchLocation() {
             <input 
             role="dateInput"
             aria-label="startDate"
+            // value="09/29/2021"
+            // placeholder="09/29/2021"
             type="date" onChange={(e) => {
                 console.log(e.target.value)
                 const dateTime = e.target.value + "T00:00:00Z"
