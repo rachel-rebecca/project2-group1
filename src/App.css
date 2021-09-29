@@ -323,7 +323,8 @@ button:hover {
 }
 
 .withP {
-  margin-right: 4px;
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 .and {
@@ -499,7 +500,7 @@ details {
   }
 
   .withP {
-    margin-right: 8px;
+    margin-right: 5px;
     margin-left: 5px;
   }
 
