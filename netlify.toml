@@ -1,6 +1,7 @@
 [build]
   command = "npm run build"
   functions = "lambda"
+  publish = "build
 
 # this is actually a Rewrite
 # totally optional, but makes up for
