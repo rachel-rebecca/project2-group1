@@ -32,7 +32,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build": "netlify-lambda build src",
-    "ts-check": "tsc --noEmit --lib ES2015 ./src/*.ts"
+    "ts-check": "tsc --noEmit --lib ES2015 ./src/*.ts",
+    "postinstall": "netlify-lambda install"
   },
   "eslintConfig": {
     "extends": [
