@@ -6,6 +6,6 @@ directory = "netlify"
 
 functions = "handler"
 
-command = "npm build"
+command = "npm run build"
 
 build = "build"
