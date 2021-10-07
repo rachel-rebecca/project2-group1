@@ -1,5 +1,7 @@
+
+
 [build]
 
 directory = "functions"
 
-command = "netlify-lambda build src"
+functions = "handler"
