@@ -32,7 +32,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "npm run build",
+    "build": "netlify-lambda build",
     "ts-check": "tsc --noEmit --lib ES2015 ./src/*.ts",
     "postinstall": "netlify-lambda install"
   },
