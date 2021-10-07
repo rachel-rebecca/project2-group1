@@ -5,3 +5,7 @@
 directory = "netlify"
 
 functions = "handler"
+
+command = "npm build"
+
+build = "build"
