@@ -6,6 +6,6 @@ directory = "netlify"
 
 functions = "handler"
 
-command = "npm run build"
+command = "netlify-lambda build src"
 
 build = "build"
