@@ -2,4 +2,4 @@
 
 directory = "functions"
 
-functions = "netlify-lambda build src"
+command = "netlify-lambda build src"
