@@ -9,7 +9,7 @@ commandOrigin = "config"
 publishOrigin = "config"
 functionsDirectory = "/build/handler"
 directory = "netlify"
-functions = "src"
+functions = "functions"
 
 [[redirects]]
 from = "/"
