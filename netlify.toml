@@ -5,7 +5,7 @@
 # base = "src"
 command = "npm run build"
 commandOrigin = "config"
-publish = "src/"
+# publish = "src/"
 publishOrigin = "config"
 functionsDirectory = "/build/handler"
 directory = "netlify"
