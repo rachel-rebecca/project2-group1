@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom"
 import cors from "cors"
+import {handler} from "../netlify/handler"
 
 ReactDOM.render(
   <React.StrictMode>
