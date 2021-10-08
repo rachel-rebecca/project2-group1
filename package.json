@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@types/aws-lambda": "^8.10.83",
     "@types/cors": "^2.8.12",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.25",
@@ -56,5 +57,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-typescript": "^7.12.1"
   }
 }
