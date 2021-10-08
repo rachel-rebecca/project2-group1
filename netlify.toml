@@ -2,15 +2,16 @@
 
 [build]
 
-directory = "netlify"
-
-functions = "handler"
-
 command = "netlify-lambda build src"
-
-publish = "build"
+commandOrigin = "config"
+publish = "/opt/build/repo/build"
+publishOrigin = "config"
+functionsDirectory = "/opt/build/repo/handler"
+directory = "netlify"
+functions = "handler"
 
 [[redirects]]
 from = "/"
 to = "/.netlify/handler"
 status = 200
+redirectsOrigin = "config"
