@@ -3,7 +3,7 @@
 [build]
 
 # base = "src"
-command = "npm run build src"
+command = "npm run build"
 commandOrigin = "config"
 publish = "src/"
 publishOrigin = "config"
