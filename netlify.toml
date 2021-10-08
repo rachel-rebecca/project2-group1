@@ -9,3 +9,8 @@ functions = "handler"
 command = "netlify-lambda build src"
 
 publish = "build"
+
+[[redirects]]
+from = "/"
+to = "/.netlify/functions/handler"
+status = 200
