@@ -8,4 +8,4 @@ functions = "handler"
 
 command = "netlify-lambda build src"
 
-build = "build"
+publish = "build"
