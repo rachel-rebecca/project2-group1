@@ -3,7 +3,7 @@
 [build]
 
 base = "src"
-command = "netlify-lambda build src"
+command = "npm run build src"
 commandOrigin = "config"
 publish = "src/"
 publishOrigin = "config"
