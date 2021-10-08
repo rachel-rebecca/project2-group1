@@ -4,9 +4,9 @@
 
 command = "netlify-lambda build src"
 commandOrigin = "config"
-publish = "/opt/build/repo/build"
+publish = "/build/src/build"
 publishOrigin = "config"
-functionsDirectory = "/opt/build/repo/handler"
+functionsDirectory = "/build/src/handler"
 directory = "netlify"
 functions = "handler"
 
