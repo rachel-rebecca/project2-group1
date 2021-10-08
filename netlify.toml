@@ -2,9 +2,10 @@
 
 [build]
 
+base = "root/"
 command = "netlify-lambda build src"
 commandOrigin = "config"
-publish = "src"
+publish = "src/"
 publishOrigin = "config"
 functionsDirectory = "/build/handler"
 directory = "netlify"
