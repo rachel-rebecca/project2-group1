@@ -14,6 +14,8 @@ import FavoritesProvider from './context/FavoritesProvider';
 import Redirect from './components/Redirect';
 
 
+
+
 function App() {
 
   const [event, setEvent] = useState<Event>();
@@ -23,18 +25,7 @@ function App() {
     getEvents().then((data) => { setEvents(data) })
   }, [setEvents]);
 
-  // function onSubmit (postalCode: any) {
-  //     let events2 = [...events];
-  //     events2 = events2.filter((event) => event._embedded === postalCode);
-  //     setEvents(events2);
-  // }
-
-  function onSubmit(name?: string, dates?: any) {
-    getEvents(name, dates).then((data) =>
-      setEvents(data))
-  }
-
-
+  
   return (
     <BrowserRouter>
     <FavoritesProvider>
