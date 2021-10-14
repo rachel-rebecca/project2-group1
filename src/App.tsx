@@ -26,6 +26,7 @@ function App() {
   }, [setEvents]);
 
   
+  
   return (
     <BrowserRouter>
     <FavoritesProvider>
