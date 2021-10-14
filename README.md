@@ -2,7 +2,7 @@
 This project is currently in the process of being deployed/published through netlify.
 
 Below are screenshots of the app and its functionality:
-![homepage for desktop](https://github.com/rachel-rebecca/project2-group1/merrygo-events/screenshots/desktop-home.png?raw=true)
+![homepage for desktop](./screenshots/desktop-home.png?raw=true)
 
 
 # Getting Started with Create React App
