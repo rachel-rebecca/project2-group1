@@ -1,3 +1,10 @@
+# Notes from project creators:
+This project is currently in the process of being deployed/published through netlify.
+
+Below are screenshots of the app and its functionality:
+![homepage for desktop](https://github.com/rachel-rebecca/project2-group1/main/screenshots/desktop-home.png?raw=true)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
