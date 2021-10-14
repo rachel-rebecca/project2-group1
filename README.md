@@ -1,4 +1,4 @@
-error-image# Notes from project creators:
+# Notes from project creators:
 This project is currently in the process of being deployed/published through netlify.
 
 Below are screenshots of the app and its functionality:
@@ -29,7 +29,6 @@ Once on the favorites page, the user can then click the title for more details, 
 ![favorites list for desktop with removed item](./screenshots/desktop-favorites-remove.png?raw=true)
 
 
-Below is the error image, which I drew on an ipad using the concepts app. 
 
 
 # Getting Started with Create React App
