@@ -1,8 +1,35 @@
-# Notes from project creators:
+error-image# Notes from project creators:
 This project is currently in the process of being deployed/published through netlify.
 
 Below are screenshots of the app and its functionality:
+
+This is the desktop and hten mobile version for the homepage and search form.
 ![homepage for desktop](./screenshots/desktop-home.png?raw=true)
+![homepage for mobile](./screenshots/mobile-home.png?raw=true)
+
+
+The keyword is optional, but zipcode and date range are required to search
+![search filled out for mobile](./screenshots/mobile-filled.png?raw=true)
+
+After filling out the criteria, the app uses useParams to take the user input data and search the ticketmaster API for related results. The zipcode is also converted to latitutde and longitude (the variable of latlong is what the ticketmaster API accepted) using a search through a 2D array containing zipcodes and their corresponding coordinates. The results are located within a 100 mile radius and display closest in distance to furthest away. Here are the results in desktop then in mobile version.
+![results page for desktop](./screenshots/desktop-results.png?raw=true)
+![results page for mobile](./screenshots/mobile-results.png?raw=true)
+
+
+The user can then click the event title for more details. A unique feature of our app is that we kept accessibility and covid precautions in mind. When a user clicks to get more details, the info from the API about healthchecks and accessibilty displays easily for the user to see. The buy tickets button takes the user to an external link to either ticketmaster, or another ticket selling website. 
+![event details for desktop](./screenshots/desktop-details.png?raw=true)
+![event details for mobile](./screenshots/mobile-details.png?raw=true)
+
+Users are also able to click the star icon to save their favorite events into a favorites list. The solid star indicates the event was added to favorites.
+![favorites clicked for desktop](./screenshots/desktop-starred.png?raw=true)
+![favorites clicked for mobile](./screenshots/mobile-starred.png?raw=true)
+
+Once on the favorites page, the user can then click the title for more details, buy tickets, or they can click the star again to remove an event from their favorites list.
+![favorites list for desktop](./screenshots/desktop-favorites.png?raw=true)
+![favorites list for desktop with removed item](./screenshots/desktop-favorites-remove.png?raw=true)
+
+
+Below is the error image, which I drew on an ipad using the concepts app. 
 
 
 # Getting Started with Create React App
